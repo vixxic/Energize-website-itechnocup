@@ -17,7 +17,7 @@ import SemuaTerhitung from "./components/SemuaTerhitung";
 import Fitur from "./components/landingPage/Fitur/Fitur";
 import HowItWorks from "./components/landingPage/HowItWorks/HowItWorks";
 import Impact from "./components/landingPage/Impact/Impact";
-import Footer from "./components/landingPage/Footer/Footer";
+import Footer from "./components/landingPage/Footer/Footer.module";
 
 export default function Home() {
   useEffect(() => {
