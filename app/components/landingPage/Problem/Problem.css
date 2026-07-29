@@ -5,6 +5,20 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  position: relative;
+}
+
+.awan-parallax {
+  position: absolute;
+  width: 100%;
+  height: auto;
+
+  left: 0;
+  bottom: clamp(3rem, calc(10vw - 5rem), 10rem);
+
+  z-index: 2;
+  pointer-events: none;
 }
 
 .problem-section h2 {
@@ -19,8 +33,21 @@
 
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  margin-bottom: 0.2vw;
+
+  position: relative;
+  z-index: 100;
 }
 
 .problem-section p {
+  position: relative;
+  z-index: 100;
   font-size: var(--text-paragraf);
+}
+
+.problems-con {
+  display: flex;
+  position: relative;
+  z-index: 100;
 }
