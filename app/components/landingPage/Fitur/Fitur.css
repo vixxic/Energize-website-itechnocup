@@ -36,7 +36,7 @@
   margin-bottom: 32px;
 }
 
-.Fitur-section p {
+.fitur-text {
   max-width: 760px;
 
   font-family: var(--font-poppins);
@@ -45,4 +45,37 @@
   line-height: 1.7;
 
   color: var(--pallet-cream);
+}
+
+.fitur-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fitur-box {
+  width: 230px;
+  height: 220px;
+  background: #d9d9d9;
+  border-radius: 4px;
+}
+
+.fitur-card p{
+  margin-top: 20px;
+  max-width: 220px;
+
+  font-family: var(--font-mitr);
+  font-size: var(--text-paragraf);
+  line-height: 1.6;
+  text-align: center;
+
+  color: var(--pallet-cream);
+}
+
+.fitur-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 90px;
 }
