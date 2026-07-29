@@ -23,11 +23,7 @@
   text-align: left;
   line-height: 1.2;
 
-  background: linear-gradient(
-    90deg,
-    var(--pallet-cream),
-    var(--pallet-cream)
-  );
+  background: linear-gradient(90deg, var(--pallet-cream), var(--pallet-cream));
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -41,7 +37,7 @@
 
   font-family: var(--font-poppins);
   font-size: var(--text-paragraf);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.7;
 
   color: var(--pallet-cream);
@@ -60,7 +56,7 @@
   border-radius: 4px;
 }
 
-.fitur-card p{
+.fitur-card p {
   margin-top: 20px;
   max-width: 220px;
 

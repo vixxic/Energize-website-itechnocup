@@ -35,6 +35,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Problem() {
   useEffect(() => {}, []);
+
   return (
     <div className="problem-section padding">
       <img className="awan-parallax" src="/problems-img/awan.png" />

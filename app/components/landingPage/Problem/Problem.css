@@ -88,6 +88,7 @@
   font-family: var(--font-averia);
   font-size: var(--text-paragraf);
   color: var(--pallet-dark-blue);
+  font-weight: bolder;
 }
 
 .problem-con p {
