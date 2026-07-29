@@ -1,0 +1,14 @@
+.how-it-works-section {
+  background-color: var(--pallet-cream);
+}
+
+.stop-contacts-div {
+  display: flex;
+  gap: 4vw;
+}
+
+.kabel {
+  background-color: var(--pallet-dark-blue);
+  width: 20px;
+  height: 300px;
+}

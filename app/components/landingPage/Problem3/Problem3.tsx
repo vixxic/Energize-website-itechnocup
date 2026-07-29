@@ -2,7 +2,7 @@ import "./Problem.css";
 
 function Problem3() {
   return (
-    <div>
+    <div className="problem3-section">
       <img src="/ruang-tamu.png" />
     </div>
   );

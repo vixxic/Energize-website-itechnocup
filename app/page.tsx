@@ -15,6 +15,7 @@ import Problem2 from "./components/landingPage/Problem2/Problem2";
 import Problem3 from "./components/landingPage/Problem3/Problem3";
 import SemuaTerhitung from "./components/SemuaTerhitung";
 import Fitur from "./components/landingPage/Fitur/Fitur";
+import HowItWorks from "./components/landingPage/HowItWorks/HowItWorks";
 import Impact from "./components/landingPage/Impact/Impact";
 
 export default function Home() {
@@ -67,6 +68,7 @@ export default function Home() {
       <Problem3 />
       <SemuaTerhitung />
       <Fitur />
+      <HowItWorks />
       <Impact />
     </div>
   );
