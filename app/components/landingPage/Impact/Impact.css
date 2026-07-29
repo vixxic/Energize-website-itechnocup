@@ -1,0 +1,48 @@
+.Impact-section {
+  background: linear-gradient(
+    90deg,
+    var(--pallet-purple),
+    var(--pallet-purple)
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 10vw 20px;
+}
+
+.Impact-section h2 {
+  max-width: 850px;
+  margin: 0 0 32px;
+
+  font-family: var(--font-averia);
+  font-size: var(--text-header);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+
+  background: linear-gradient(
+    90deg,
+    var(--pallet-cream),
+    var(--pallet-cream)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Impact-section p {
+  max-width: 760px;
+  margin: 0;
+
+  font-family: var(--font-poppins);
+  font-size: var(--text-paragraf);
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: center;
+
+  color: var(--pallet-cream);
+}
