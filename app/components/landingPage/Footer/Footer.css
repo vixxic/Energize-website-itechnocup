@@ -1,0 +1,17 @@
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.footer-logo h2{
+    font-size:32px;
+    font-weight:700;
+    color:#22336A;
+    margin:0;
+}
+
+.footer-logo img{
+    object-fit:contain;
+}
