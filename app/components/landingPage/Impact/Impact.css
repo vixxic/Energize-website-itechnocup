@@ -1,48 +1,51 @@
 .Impact-section {
-  background: linear-gradient(
-    90deg,
-    var(--pallet-purple),
-    var(--pallet-purple)
-  );
+  background: var(--pallet-purple);
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   text-align: center;
-  padding: 10vw 20px;
+  padding: 70px 20px;
 }
 
 .Impact-section h2 {
-  max-width: 850px;
-  margin: 0 0 32px;
+  margin-bottom: 20px;
 
   font-family: var(--font-averia);
   font-size: var(--text-header);
   font-weight: 400;
   line-height: 1.2;
-  text-align: center;
 
-  background: linear-gradient(
-    90deg,
-    var(--pallet-cream),
-    var(--pallet-cream)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--pallet-cream);
 }
 
-.Impact-section p {
+.impact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 48px;
+
+  width: 100%;
+  margin: 10px 0 24px;
+}
+
+.impact-card {
+  position: relative;
+  width: 220px;
+  height: 160px;
+
+  flex-shrink: 0;
+}
+
+.impact-text {
   max-width: 760px;
-  margin: 0;
 
   font-family: var(--font-poppins);
   font-size: var(--text-paragraf);
   font-weight: 400;
-  line-height: 1.7;
-  text-align: center;
+  line-height: 1.6;
 
   color: var(--pallet-cream);
 }
