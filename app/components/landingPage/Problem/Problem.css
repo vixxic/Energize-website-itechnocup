@@ -1,0 +1,26 @@
+.problem-section {
+  background: var(--pallet-cream);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.problem-section h2 {
+  font-family: var(--font-averia);
+  font-size: var(--text-header);
+
+  background: linear-gradient(
+    90deg,
+    var(--pallet-dark-blue),
+    var(--pallet-purple)
+  );
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.problem-section p {
+  font-size: var(--text-paragraf);
+}

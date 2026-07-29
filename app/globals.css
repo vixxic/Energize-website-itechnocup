@@ -7,7 +7,7 @@
   --radius: 5px;
 
   --text-main-header: clamp(48px, 5vw, 96px);
-  --text-header: clamp(36px, 3.5vw, 64px);
+  --text-header: clamp(36px, 3vw, 64px);
   --text-paragraf: clamp(16px, 1.25vw, 24px);
 }
 
