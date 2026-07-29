@@ -30,7 +30,6 @@ export default function Home() {
           start: "top bottom",
           end: "bottom top",
           scrub: true,
-          markers: true,
         },
       },
     );
@@ -49,7 +48,6 @@ export default function Home() {
           start: "top bottom",
           end: "bottom top",
           scrub: true,
-          markers: true,
         },
       },
     );
