@@ -1,0 +1,48 @@
+.Fitur-section {
+  background: linear-gradient(
+    180deg,
+    var(--pallet-purple),
+    var(--pallet-dark-blue)
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.Fitur-section h2 {
+  max-width: 850px;
+
+  font-family: var(--font-averia);
+  font-size: var(--text-header);
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.2;
+
+  background: linear-gradient(
+    90deg,
+    var(--pallet-cream),
+    var(--pallet-cream)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-bottom: 32px;
+}
+
+.Fitur-section p {
+  max-width: 760px;
+
+  font-family: var(--font-poppins);
+  font-size: var(--text-paragraf);
+  font-weight: 500;
+  line-height: 1.7;
+
+  color: var(--pallet-cream);
+}
