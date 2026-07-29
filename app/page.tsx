@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Beranda from "./components/landingPage/Beranda/Beranda";
 import Problem from "./components/landingPage/Problem/Problem";
 import Problem2 from "./components/landingPage/Problem2/Problem2";
+import SemuaTerhitung from "./components/SemuaTerhitung";
 import Fitur from "./components/landingPage/Fitur/Fitur";
 
 export default function Home() {
@@ -63,6 +64,7 @@ export default function Home() {
       <Beranda />
       <Problem />
       <Problem2 />
+      <SemuaTerhitung />
       <Fitur />
     </div>
   );
