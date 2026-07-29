@@ -40,14 +40,59 @@
   z-index: 100;
 }
 
-.problem-section p {
+.problem-text {
   position: relative;
   z-index: 100;
   font-size: var(--text-paragraf);
+  font-weight: 400;
+  color: var(--pallet-dark-blue);
 }
 
 .problems-con {
   display: flex;
   position: relative;
   z-index: 100;
+
+  gap: 2vw;
+}
+
+.problem-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vw;
+}
+
+.problem-title-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.problem-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--pallet-purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.problem-icon svg {
+  color: white;
+}
+
+.problem-title {
+  font-family: var(--font-averia);
+  font-size: var(--text-paragraf);
+  color: var(--pallet-dark-blue);
+}
+
+.problem-con p {
+  color: var(--pallet-dark-blue);
+  font-weight: 400;
+  text-align: center;
+  width: 80%;
 }

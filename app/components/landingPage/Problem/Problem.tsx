@@ -1,4 +1,7 @@
+"use client";
+
 import "./Problem.css";
+import { useEffect } from "react";
 
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { BsLightningChargeFill } from "react-icons/bs";
@@ -25,25 +28,31 @@ const problemsData = [
   },
 ];
 
+// gsap
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
+
 function Problem() {
+  useEffect(() => {}, []);
   return (
     <div className="problem-section padding">
       <img className="awan-parallax" src="/problems-img/awan.png" />
 
       <h2>Dampak Tersembunyi Penggunaan Energi</h2>
-      <p>
+      <p className="problem-text">
         Tagihan listrik bukan satu-satunya yang meningkat ketika kita
         menggunakan energi secara berlebihan
       </p>
 
       <div className="problems-con">
         {problemsData.map((problem, index) => (
-          <div key={index}>
+          <div className="problem-con" key={index}>
             <img src={problem.img} />
 
-            <div>
-              <div>{problem.icon}</div>
-              <p>{problem.title}</p>
+            <div className="problem-title-con">
+              <div className="problem-icon">{problem.icon}</div>
+              <p className="problem-title">{problem.title}</p>
             </div>
 
             <p>{problem.text}</p>
