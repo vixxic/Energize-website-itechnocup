@@ -1,7 +1,11 @@
 import "./Problem.css";
 
 function Problem3() {
-  return <div></div>;
+  return (
+    <div>
+      <p></p>
+    </div>
+  );
 }
 
 export default Problem3;
