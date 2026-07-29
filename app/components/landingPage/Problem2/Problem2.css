@@ -30,6 +30,9 @@
   -webkit-text-fill-color: transparent;
 
   margin-bottom: 32px;
+
+  position: relative;
+  z-index: 100;
 }
 
 .problem2-section p {

@@ -34,6 +34,7 @@ body {
   font-family: var(--font-mitr);
 
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 .padding {

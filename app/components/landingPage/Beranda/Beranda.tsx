@@ -12,8 +12,11 @@ function Beranda() {
       </div>
 
       <div className="beranda-img-con">
-        <img src="/rumah.png" alt="rumah ungu dengan elemen listrik" />
-        {/* <img className="awan-ungu" src="/awan-ungu-rumah.png" /> */}
+        <img
+          className="rumah-img"
+          src="/rumah.png"
+          alt="rumah ungu dengan elemen listrik"
+        />
       </div>
     </div>
   );
