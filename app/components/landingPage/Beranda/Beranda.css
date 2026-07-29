@@ -46,6 +46,9 @@
 
 .beranda-img-con {
   width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .beranda-img-con img {

@@ -1,6 +1,22 @@
 import "./Beranda.css";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 function Beranda() {
+  useEffect(() => {
+    gsap
+      .timeline()
+      .from(".beranda-text-con h1 ", {
+        x: -100,
+        opacity: 0,
+        ease: "power1.out",
+      })
+      .from(".beranda-text-con p ", {
+        x: -100,
+        opacity: 0,
+        ease: "power1.out",
+      });
+  }, []);
   return (
     <div className="beranda-section padding">
       <div className="beranda-text-con">
