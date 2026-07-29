@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 // landing page
 import Beranda from "./components/landingPage/Beranda/Beranda";
 import Problem from "./components/landingPage/Problem/Problem";
+import Problem2 from "./components/landingPage/Problem2/Problem2";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       {/* landing page */}
       <Beranda />
       <Problem />
+      <Problem2 />
     </div>
   );
 }
