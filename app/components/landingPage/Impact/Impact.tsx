@@ -4,10 +4,10 @@ import "./Impact.css";
 import Image from "next/image";
 
 const impactData = [
-  { img: "/impact-img/1 rumah.png" },
-  { img: "/impact-img/10 rumah.png" },
-  { img: "/impact-img/100 rumah.png" },
-  { img: "/impact-img/1 komunitas.png" },
+ "/impact-img/1 rumah.png",
+ "/impact-img/10 rumah.png",
+ "/impact-img/100 rumah.png",
+"/impact-img/1 komunitas.png",
 ];
 
 export default function Impact() {
@@ -16,10 +16,10 @@ export default function Impact() {
       <h2>Dampak Kolektif</h2>
 
       <div className="impact-container">
-        {impactData.map((item, index) => (
+        {impactData.map((img, index) => (
           <div className="impact-card" key={index}>
             <Image
-              src={item.img}
+              src={img}
               alt={`Impact ${index + 1}`}
               fill
               style={{ objectFit: "contain" }}

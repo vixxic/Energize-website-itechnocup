@@ -16,7 +16,7 @@ import Problem3 from "./components/landingPage/Problem3/Problem3";
 import Fitur from "./components/landingPage/Fitur/Fitur";
 import HowItWorks from "./components/landingPage/HowItWorks/HowItWorks";
 import Impact from "./components/landingPage/Impact/Impact";
-import Footer from "./components/landingPage/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   useEffect(() => {
