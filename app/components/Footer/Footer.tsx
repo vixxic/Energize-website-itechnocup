@@ -1,14 +1,13 @@
-import styles from "./Footer.module.css";
-import Image from "next/image";
+import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer className={styles.footerSection}>
-      <div className={styles.footerContainer}>
-        <div className={styles.footerBrand}>
-          <div className={styles.footerLogo}>
-            <Image
-              src="/footer-img/1 2.png"
+    <footer className="footer-section">
+      <div className="footer-container">
+        <div className="footer-brand">
+          <div className="footer-logo">
+            <img
+              src="/logo-energize.png"
               alt="Energize Logo"
               width={42}
               height={42}
@@ -23,7 +22,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className={styles.footerColumn}>
+        <div className="footer-column">
           <h3>Navigasi</h3>
           <a href="#">Beranda</a>
           <a href="#">Cara Kerja</a>
@@ -32,7 +31,7 @@ export default function Footer() {
           <a href="#">Analisis Energi</a>
         </div>
 
-        <div className={styles.footerColumn}>
+        <div className="footer-column">
           <h3>Aplikasi</h3>
           <a href="#">Mulai Analisis</a>
           <a href="#">Dashboard</a>
@@ -40,7 +39,7 @@ export default function Footer() {
           <a href="#">Penggunaan</a>
         </div>
 
-        <div className={styles.footerColumn}>
+        <div className="footer-column">
           <h3>Tentang</h3>
           <a href="#">Tentang Kami</a>
           <a href="#">SDGs</a>
@@ -48,7 +47,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className={styles.footerBottom}>
+      <div className="footer-bottom">
         <p>
           © 2026 Energize. Dibuat untuk masa depan yang lebih hemat dan
           berkelanjutan.
