@@ -23,13 +23,9 @@
   text-align: left;
   line-height: 1.2;
 
-  background: linear-gradient(90deg, var(--pallet-cream), var(--pallet-cream));
+  background: var(--pallet-cream);
 
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  margin-bottom: 32px;
+  margin: 0;
 }
 
 .fitur-text {
