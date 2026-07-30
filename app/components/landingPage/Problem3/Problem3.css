@@ -1,16 +1,13 @@
 .problem3-section {
   position: relative;
   width: 100vw;
+  height: 100vh;
   background-color: var(--pallet-cream);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.problem3-section img {
-  scale: 0.5;
 }
 
 .problem3-section h2 {
@@ -29,4 +26,19 @@
   -webkit-text-fill-color: transparent;
   position: absolute;
   bottom: 0;
+}
+
+.problem3-img-div {
+  position: absolute;
+  width: 100%;
+  scale: 0.5;
+}
+
+.problem3-img-div div {
+  position: relative;
+  width: 100%;
+}
+
+.problem3-img-div div img {
+  position: absolute;
 }

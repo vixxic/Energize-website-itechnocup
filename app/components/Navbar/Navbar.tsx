@@ -3,6 +3,9 @@
 import "./Navbar.css";
 import { useEffect, useState } from "react";
 
+// icons
+import { GiHamburgerMenu } from "react-icons/gi";
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,8 +36,17 @@ function Navbar() {
           <li>Cara Kerja</li>
           <li>Dampak</li>
         </ul>
-        <div className={`analyze-btn ${scrolled ? "scrolled" : ""}`}>
-          <button className={`${scrolled ? "scrolled" : ""}`}>Analisis</button>
+
+        <div className="nav-hp">
+          <div className={`analyze-btn ${scrolled ? "scrolled" : ""}`}>
+            <button className={`${scrolled ? "scrolled" : ""}`}>
+              Analisis
+            </button>
+          </div>
+
+          <button className="dropdown-btn-hp">
+            <GiHamburgerMenu />
+          </button>
         </div>
       </div>
     </div>

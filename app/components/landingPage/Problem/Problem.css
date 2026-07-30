@@ -15,7 +15,7 @@
   height: auto;
 
   left: 0;
-  bottom: clamp(3rem, calc(10vw - 5rem), 10rem);
+  bottom: 5%;
 
   z-index: 2;
   pointer-events: none;
@@ -98,8 +98,16 @@
   width: 80%;
 }
 
+/* laptop */
+@media (max-width: 1500px) {
+  .awan-parallax {
+    left: 0;
+    bottom: 40%;
+  }
+}
+
 /* Tablet */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .problem-section {
     padding-top: 8vw;
     padding-bottom: 10vw;
@@ -145,7 +153,8 @@
   }
 
   .awan-parallax {
-    bottom: 2rem;
+    left: 0;
+    bottom: 60%;
   }
 }
 
@@ -207,9 +216,6 @@
   }
 
   .awan-parallax {
-    width: 180%;
-    max-width: none;
-    left: -40%;
-    bottom: 2rem;
+    scale: 1;
   }
 }

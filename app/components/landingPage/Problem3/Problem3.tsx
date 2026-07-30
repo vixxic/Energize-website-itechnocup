@@ -14,13 +14,17 @@ function Problem3() {
         start: "5% top",
         pin: true,
         end: "+=2500",
-        markers: true,
       },
     });
   }, []);
   return (
     <div className="problem3-section">
-      <img src="/ruang-tamu.png" />
+      <div className="problem3-img-div">
+        <div>
+          <img src="/ruang-tamu.png" />
+          <img className="balon" src="/balon-watt.png" />
+        </div>
+      </div>
 
       <h2>Semua Terhitung...</h2>
     </div>
