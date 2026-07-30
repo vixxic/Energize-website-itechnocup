@@ -30,7 +30,6 @@ function HowItWorks() {
           start: "20% 70%",
           end: "bottom bottom",
           scrub: 1,
-          markers: true,
         },
       });
 

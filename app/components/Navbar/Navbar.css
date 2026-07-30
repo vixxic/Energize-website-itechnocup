@@ -30,7 +30,8 @@
 }
 
 .navbar-inner.scrolled {
-  background: rgb(114, 62, 198, 0.6);
+  /* background: rgb(114, 62, 198, 0.6); */
+  background-color: var(--pallet-dark-blue);
 
   border-radius: 50px;
 }
