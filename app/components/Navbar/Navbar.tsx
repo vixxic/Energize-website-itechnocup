@@ -33,8 +33,8 @@ function Navbar() {
           <li>Cara Kerja</li>
           <li>Dampak</li>
         </ul>
-        <div className="analyze-btn">
-          <button>Analisis</button>
+        <div className={`analyze-btn ${scrolled ? "scrolled" : ""}`}>
+          <button className={`${scrolled ? "scrolled" : ""}`}>Analisis</button>
         </div>
       </div>
     </div>

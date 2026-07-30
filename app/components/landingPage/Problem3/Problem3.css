@@ -1,0 +1,32 @@
+.problem3-section {
+  position: relative;
+  width: 100vw;
+  background-color: var(--pallet-cream);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.problem3-section img {
+  scale: 0.5;
+}
+
+.problem3-section h2 {
+  font-family: var(--font-averia);
+  font-size: var(--text-header);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    var(--pallet-dark-blue),
+    var(--pallet-purple)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  bottom: 0;
+}

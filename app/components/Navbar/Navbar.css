@@ -30,7 +30,8 @@
 }
 
 .navbar-inner.scrolled {
-  background-color: var(--pallet-purple);
+  background: rgb(114, 62, 198, 0.6);
+
   border-radius: 50px;
 }
 
@@ -77,6 +78,16 @@
   border: none;
   padding: 0.5vw 1.5vw;
   border-radius: var(--radius);
+
+  transition: background-color 2s ease;
+  transition: font-weight 2s ease;
+  font-weight: 600;
+}
+
+.analyze-btn button.scrolled {
+  background: var(--pallet-yellow);
+  color: var(--pallet-dark-blue);
+  font-weight: 600;
 }
 
 /* tablet */
