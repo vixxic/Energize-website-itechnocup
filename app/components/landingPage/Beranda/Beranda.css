@@ -75,7 +75,11 @@
     align-items: center;
     text-align: center;
 
-    margin-bottom: 5vw;
+    margin-bottom: 10vw;
+  }
+
+  .beranda-text-con h1 {
+    margin-top: 0;
   }
 }
 

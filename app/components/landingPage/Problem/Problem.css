@@ -15,7 +15,7 @@
   height: auto;
 
   left: 0;
-  bottom: 5%;
+  bottom: clamp(5%, 8vw, 15%);
 
   z-index: 2;
   pointer-events: none;
@@ -102,7 +102,7 @@
 @media (max-width: 1500px) {
   .awan-parallax {
     left: 0;
-    bottom: 40%;
+    bottom: clamp(20%, 30vw, 40%);
   }
 }
 
@@ -154,7 +154,7 @@
 
   .awan-parallax {
     left: 0;
-    bottom: 60%;
+    bottom: clamp(35%, 45vw, 60%);
   }
 }
 
@@ -216,6 +216,6 @@
   }
 
   .awan-parallax {
-    scale: 1;
+    bottom: clamp(50%, 60vw, 75%);
   }
 }
