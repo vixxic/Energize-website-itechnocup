@@ -18,6 +18,7 @@ import Problem3 from "./landingPageComponents/Problem3/Problem3";
 import Fitur from "./landingPageComponents/Fitur/Fitur";
 import HowItWorks from "./landingPageComponents/HowItWorks/HowItWorks";
 import Impact from "./landingPageComponents/Impact/Impact";
+import FormInputData from "./components/FormInputData/FormInputData";
 
 export default function Home() {
   useEffect(() => {
@@ -88,6 +89,7 @@ export default function Home() {
       <Fitur />
       <HowItWorks />
       <Impact />
+      <FormInputData />
 
       <Footer />
     </div>

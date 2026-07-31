@@ -1,0 +1,158 @@
+.formContainer{
+    width:430px;
+    background:linear-gradient(180deg,#3f1d8d,#5124bf);
+    border-radius:24px;
+    padding:32px;
+    color:white;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.title{
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#d9d4ef;
+    font-size:15px;
+    margin-bottom:28px;
+    line-height:1.5;
+}
+
+.formGroup{
+    margin-bottom:22px;
+}
+
+.formGroup label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.inputIcon,
+.quantityInput,
+.selectWrapper{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    border-radius:12px;
+    height:54px;
+    overflow:hidden;
+}
+
+.inputIcon input,
+.quantityInput input,
+.selectWrapper select{
+    flex:1;
+    border:none;
+    outline:none;
+    background:none;
+    padding:0 18px;
+    font-size:15px;
+}
+
+.selectWrapper select{
+    appearance:none;
+    cursor:pointer;
+}
+
+.icon{
+    font-size:20px;
+    color:#5d34ca;
+    margin-right:18px;
+}
+
+.quantityInput{
+    justify-content:space-between;
+}
+
+.counter{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-right:12px;
+}
+
+.counter button{
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:8px;
+    background:#f3f3f3;
+    cursor:pointer;
+    color:#5d34ca;
+    font-size:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.counter button:hover{
+    background:#e7e4f8;
+}
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+}
+
+.checkbox input{
+    width:18px;
+    height:18px;
+    accent-color:#7b4fff;
+}
+
+.checkbox label{
+    font-size:14px;
+}
+
+.infoCard{
+    background:#f2ecff;
+    border-radius:14px;
+    padding:16px;
+    display:flex;
+    gap:14px;
+    margin-bottom:24px;
+}
+
+.lamp{
+    font-size:34px;
+    color:#8c5cff;
+}
+
+.infoCard h4{
+    color:#43257d;
+    margin-bottom:6px;
+}
+
+.infoCard p{
+    color:#666;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.addButton{
+    width:100%;
+    height:56px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(90deg,#8b5cff,#a04dff);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    transition:.3s;
+}
+
+.addButton:hover{
+    transform:translateY(-2px);
+}
