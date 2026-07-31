@@ -20,6 +20,7 @@ function BottomNav() {
 
   return (
     <Menu
+      className="bottom-nav-dashboard"
       onClick={onClick}
       selectedKeys={[currentMenu]}
       mode="horizontal"
