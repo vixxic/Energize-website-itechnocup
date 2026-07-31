@@ -1,3 +1,8 @@
+.analisis-page {
+  display: flex;
+  gap: 2vw;
+}
+
 .formContainer {
   width: 420px;
   background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
@@ -169,7 +174,7 @@
   line-height: 1.5;
 }
 
-.addButton {
+.purple-btn {
   width: 100%;
   padding: 14px;
   border: none;
@@ -215,6 +220,9 @@ main {
 }
 
 @media (max-width: 768px) {
+  .analisis-page {
+    flex-direction: column;
+  }
   .formContainer {
     width: 100%;
     padding: 20px;
@@ -233,4 +241,122 @@ main {
   .addButton {
     padding: 12px;
   }
+}
+
+/* device container */
+
+.device-list-container {
+  background: #fffdfb;
+  border-radius: 15px;
+  padding: 24px;
+
+  border: 1px solid rgba(137, 43, 226, 0.1);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.05),
+    0 4px 10px rgba(128, 90, 213, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  margin-bottom: 40px;
+}
+
+.device-list-header h2 {
+  color: #292277;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.device-list-header p {
+  color: #666;
+  margin-top: 10px;
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.device-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 22px;
+
+  border-radius: 16px;
+  border: 1px solid #efe5db;
+
+  background-color: white;
+
+  transition: 0.3s ease;
+}
+
+.device-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.device-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.device-info img {
+  width: 48px;
+}
+
+.device-info h3 {
+  color: #312783;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.device-info p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.device-actions {
+  display: flex;
+  gap: 18px;
+}
+
+.device-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.device-actions button:first-child {
+  color: #7a3cff;
+}
+
+.device-actions button:last-child {
+  color: #ff4040;
+}
+
+.start-analisis-button-con {
+  background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
+  height: fit-content;
+  border-radius: 15px;
+  color: #fff;
+  padding: 24px;
+  margin-bottom: 40px;
+}
+
+.start-analisis-button-con div p:first-child {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.start-analisis-button-con div p {
+  font-size: 13px;
 }
