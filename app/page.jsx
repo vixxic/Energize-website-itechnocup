@@ -7,16 +7,17 @@ gsap.registerPlugin(ScrollTrigger);
 import { useEffect } from "react";
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // landing page
-import Beranda from "./components/landingPage/Beranda/Beranda";
-import Problem from "./components/landingPage/Problem/Problem";
-import Problem2 from "./components/landingPage/Problem2/Problem2";
-import Problem3 from "./components/landingPage/Problem3/Problem3";
-import Fitur from "./components/landingPage/Fitur/Fitur";
-import HowItWorks from "./components/landingPage/HowItWorks/HowItWorks";
-import Impact from "./components/landingPage/Impact/Impact";
-import Footer from "./components/Footer/Footer";
+
+import Beranda from "./landingPageComponents/Beranda/Beranda";
+import Problem from "./landingPageComponents/Problem/Problem";
+import Problem2 from "./landingPageComponents/Problem2/Problem2";
+import Problem3 from "./landingPageComponents/Problem3/Problem3";
+import Fitur from "./landingPageComponents/Fitur/Fitur";
+import HowItWorks from "./landingPageComponents/HowItWorks/HowItWorks";
+import Impact from "./landingPageComponents/Impact/Impact";
 
 export default function Home() {
   useEffect(() => {
@@ -87,6 +88,7 @@ export default function Home() {
       <Fitur />
       <HowItWorks />
       <Impact />
+
       <Footer />
     </div>
   );

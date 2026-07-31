@@ -1,0 +1,56 @@
+.sider-link-dashboard {
+  padding: 2vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.logo-sider-dashboard {
+  display: flex;
+  align-items: center;
+
+  gap: 1vw;
+}
+
+.logo-sider-dashboard img {
+  width: 10%;
+  height: 20px;
+}
+
+.logo-sider-dashboard p {
+  font-size: clamp(20px, 1.5vw, 30px);
+  font-family: var(--font-averia);
+  font-weight: 500;
+  color: aliceblue;
+}
+
+.ant-menu {
+  background: none !important;
+}
+
+.ant-menu {
+  background: transparent !important;
+  border-inline-end: none !important;
+}
+
+.ant-menu-item {
+  color: white !important;
+}
+
+.ant-menu-item:hover {
+  background-color: var(--pallet-ungu) !important;
+}
+
+.ant-menu-item-selected {
+  background-color: var(--pallet-ungu) !important;
+  color: white !important;
+}
+
+.ant-menu-item-active {
+  background-color: var(--pallet-ungu) !important;
+}
+
+.dahboard-bawah-rumah {
+  width: 100%;
+}

@@ -34,7 +34,7 @@
 }
 
 .navbar-inner.scrolled {
-  background-color: var(--pallet-dark-blue);
+  background-color: #202050;
 
   border-radius: 50px;
 }
@@ -99,7 +99,7 @@
   background: var(--pallet-yellow);
   border: none;
   border-radius: 2px;
-  color: var(--pallet-dark-blue);
+  color: #202050;
 }
 
 .nav-hp {

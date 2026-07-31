@@ -1,0 +1,26 @@
+.bottom-nav-dashboard {
+  display: none;
+}
+
+.sider-dashboard-con {
+  background-color: var(--pallet-nila) !important;
+}
+
+.content-dashboard {
+  background-color: var(--pallet-gading);
+  padding: 2vw;
+}
+
+.header-text-con-dashboard p {
+  margin: 0%;
+}
+
+@media screen and (max-width: 768px) {
+  .sider-dashboard-con {
+    display: none;
+  }
+
+  .bottom-nav-dashboard {
+    display: block;
+  }
+}

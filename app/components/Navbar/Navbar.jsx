@@ -3,6 +3,8 @@
 import "./Navbar.css";
 import { useEffect, useState } from "react";
 
+import Link from "next/link";
+
 // icons
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -39,9 +41,11 @@ function Navbar() {
 
         <div className="nav-hp">
           <div className={`analyze-btn ${scrolled ? "scrolled" : ""}`}>
-            <button className={`${scrolled ? "scrolled" : ""}`}>
-              Analisis
-            </button>
+            <Link href="/dashboard">
+              <button className={`${scrolled ? "scrolled" : ""}`}>
+                Analisis
+              </button>
+            </Link>
           </div>
 
           <button className="dropdown-btn-hp">

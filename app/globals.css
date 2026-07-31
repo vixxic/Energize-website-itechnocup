@@ -4,6 +4,11 @@
   --pallet-yellow: #ffcf95;
   --pallet-cream: #fff0db;
 
+  /* pallet #2 */
+  --pallet-nila: #0c0850;
+  --pallet-gading: #fef8f4;
+  --pallet-ungu: #5428c2;
+
   --radius: 5px;
 
   --text-main-header: clamp(48px, 5vw, 96px);

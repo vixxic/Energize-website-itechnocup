@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { Mitr, Averia_Gruesa_Libre } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 const mitr = Mitr({
   variable: "--font-mitr",
@@ -15,7 +15,7 @@ const averiaGruesaLibre = Averia_Gruesa_Libre({
   weight: "400",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Energize",
   description: "Platform analisis konsumsi energi berbasis AI",
   icons: {
@@ -23,11 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
@@ -35,7 +31,7 @@ export default function RootLayout({
     >
       <body>
         <SmoothScroll />
-        {children}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
