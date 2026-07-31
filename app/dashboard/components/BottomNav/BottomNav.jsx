@@ -14,19 +14,17 @@ import { DashboardContext } from "../../context/DashboardContext";
 function BottomNav() {
   const { currentMenu, setCurrentMenu } = useContext(DashboardContext);
 
-  const onClick = (e) => {
-    setCurrentMenu(e.key);
+  const onClick = (key) => {
+    setCurrentMenu(key);
   };
 
   return (
     <div className="bottom-nav-wrapper">
-      <Menu
-        className="bottom-nav-dashboard"
-        onClick={onClick}
-        selectedKeys={[currentMenu]}
-        mode="horizontal"
-        items={items}
-      />
+      {items.map((item) => (
+        <div onClick={() => onClick(item.key)} key={item.key}>
+          {item.label}
+        </div>
+      ))}
     </div>
   );
 }

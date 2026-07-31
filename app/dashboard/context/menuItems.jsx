@@ -1,17 +1,14 @@
-import {
-  IoHomeOutline,
-  IoTimerOutline,
-  IoPersonOutline,
-} from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
+import { FiHome } from "react-icons/fi";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
-import { CiMedal } from "react-icons/ci";
+import { LuMedal, LuHistory } from "react-icons/lu";
 
 export const items = [
   {
     key: "dashboard",
     label: (
       <div className="bottom-menu-item">
-        <IoHomeOutline />
+        <FiHome />
         Dashboard
       </div>
     ),
@@ -29,7 +26,7 @@ export const items = [
     key: "tantangan",
     label: (
       <div className="bottom-menu-item">
-        <CiMedal />
+        <LuMedal />
         tantangan
       </div>
     ),
@@ -38,7 +35,7 @@ export const items = [
     key: "riwayat",
     label: (
       <div className="bottom-menu-item">
-        <IoTimerOutline />
+        <LuHistory />
         riwayat
       </div>
     ),
@@ -47,7 +44,7 @@ export const items = [
     key: "profil",
     label: (
       <div className="bottom-menu-item">
-        <IoPersonOutline />
+        <CgProfile />
         profil
       </div>
     ),

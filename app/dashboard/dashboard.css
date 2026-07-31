@@ -7,6 +7,7 @@
 
 .bottom-nav-dashboard {
   display: none;
+  height: 70px;
 }
 
 .sider-dashboard-con {
@@ -25,10 +26,6 @@
   background-color: var(--pallet-gading);
   padding: 2vw;
   min-height: 100vh;
-}
-
-.bottom-nav-dashboard {
-  height: 70px;
 }
 
 /* style lain */
