@@ -19,13 +19,15 @@ function BottomNav() {
   };
 
   return (
-    <Menu
-      className="bottom-nav-dashboard"
-      onClick={onClick}
-      selectedKeys={[currentMenu]}
-      mode="horizontal"
-      items={items}
-    />
+    <div className="bottom-nav-wrapper">
+      <Menu
+        className="bottom-nav-dashboard"
+        onClick={onClick}
+        selectedKeys={[currentMenu]}
+        mode="horizontal"
+        items={items}
+      />
+    </div>
   );
 }
 
