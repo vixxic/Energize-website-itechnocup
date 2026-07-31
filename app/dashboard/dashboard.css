@@ -26,6 +26,24 @@
 
 .data-listrik-user {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  margin: 2vw 0;
+}
+
+.data-con {
+  background-color: #fdfcfa;
+  padding: 0.7vw;
+  display: flex;
+}
+
+.data-con div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 768px) {
