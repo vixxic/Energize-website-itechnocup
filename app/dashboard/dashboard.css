@@ -11,8 +11,21 @@
   padding: 2vw;
 }
 
-.header-text-con-dashboard p {
+.header-text-con-dashboard p:first-child {
   margin: 0%;
+  font-size: clamp(20px, 1.5vw, 30px);
+  font-weight: bold;
+  color: var(--pallet-nila);
+}
+
+.header-text-con-dashboard p {
+  margin: 0.7vw 0;
+  color: var(--pallet-nila);
+  font-weight: 400;
+}
+
+.data-listrik-user {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

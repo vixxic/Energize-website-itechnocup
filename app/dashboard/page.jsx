@@ -35,9 +35,13 @@ function Dashboard() {
         <Content className="content-dashboard">
           <div className="header-text-con-dashboard">
             <p>
-              Halo, "ceritanya nama orang"! <MdWavingHand />
+              Halo, Orang! <MdWavingHand color="#F6BB3C" />
             </p>
             <p>Berikut adalah hasil analisis penggunaan energi rumah anda</p>
+          </div>
+
+          <div className="data-listrik-user">
+            <p>ndjkks</p>
           </div>
         </Content>
         <Footer className="bottom-nav-dashboard" style={footerStyle}>
