@@ -10,7 +10,7 @@ export const items = [
   {
     key: "dashboard",
     label: (
-      <div>
+      <div className="bottom-menu-item">
         <IoHomeOutline />
         Dashboard
       </div>
@@ -19,7 +19,7 @@ export const items = [
   {
     key: "analisis",
     label: (
-      <div>
+      <div className="bottom-menu-item">
         <TbBrandGoogleAnalytics />
         Analisis
       </div>
@@ -28,7 +28,7 @@ export const items = [
   {
     key: "tantangan",
     label: (
-      <div>
+      <div className="bottom-menu-item">
         <CiMedal />
         tantangan
       </div>
@@ -37,7 +37,7 @@ export const items = [
   {
     key: "riwayat",
     label: (
-      <div>
+      <div className="bottom-menu-item">
         <IoTimerOutline />
         riwayat
       </div>
@@ -46,7 +46,7 @@ export const items = [
   {
     key: "profil",
     label: (
-      <div>
+      <div className="bottom-menu-item">
         <IoPersonOutline />
         profil
       </div>

@@ -6,12 +6,12 @@
   width: 100%;
   height: 82px;
 
-  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-  background-color: #ffffff;
-
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
+  background: #fff !important;
+  border: none !important;
 
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 
@@ -81,4 +81,11 @@
 
 .bottom-nav-dashboard .ant-menu-item::after {
   display: none !important;
+}
+
+.bottom-nav-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
