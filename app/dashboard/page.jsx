@@ -1,10 +1,12 @@
 "use client";
 
 import "./dashboard.css";
+import { useContext } from "react";
 
 // components
 import BottomNav from "./components/BottomNav/BottomNav";
 import SiderNav from "./components/SiderNav/SiderNav";
+import FormInputData from "./components/FormInputData/FormInputData";
 
 // icons
 import { MdWavingHand } from "react-icons/md";
@@ -52,36 +54,65 @@ const userDataListrik = [
   },
 ];
 
+import { DashboardContext } from "./context/DashboardContext";
+
 function Dashboard() {
+  const { currentMenu } = useContext(DashboardContext);
+
   return (
     <Layout style={layoutStyle}>
       <Sider className="sider-dashboard-con" width="20%">
         <SiderNav />
       </Sider>
-      <Layout>
-        <Content className="content-dashboard">
-          <div className="header-text-con-dashboard">
-            <p>
-              Halo, Orang! <MdWavingHand color="#F6BB3C" />
-            </p>
-            <p>Berikut adalah hasil analisis penggunaan energi rumah anda</p>
-          </div>
 
-          <div className="data-listrik-user">
-            {userDataListrik.map((data, index) => (
-              <div className="data-con">
-                <div style={{ backgroundColor: data.bgColor }}>{data.icon}</div>
-                <div>
-                  <p>{data.title}</p>
+      <Content className="content-dashboard">
+        {currentMenu === "dashboard" ? (
+          <div>
+            <div className="header-text-con-dashboard">
+              <p>
+                Halo, Orang! <MdWavingHand color="#F6BB3C" />
+              </p>
+              <p>Berikut adalah hasil analisis penggunaan energi rumah anda</p>
+            </div>
+            <div className="data-listrik-user">
+              {userDataListrik.map((data, index) => (
+                <div className="data-con">
+                  <div style={{ backgroundColor: data.bgColor }}>
+                    {data.icon}
+                  </div>
+                  <div>
+                    <p>{data.title}</p>
+                    <p></p>
+                    <p></p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </Content>
-        <Footer className="bottom-nav-dashboard" style={footerStyle}>
-          <BottomNav />
-        </Footer>
-      </Layout>
+        ) : currentMenu === "analisis" ? (
+          <div>
+            {" "}
+            <FormInputData />
+          </div>
+        ) : currentMenu === "tantangan" ? (
+          <div>
+            <p>halaman tantangan</p>
+          </div>
+        ) : currentMenu === "riwayat" ? (
+          <div>
+            <p>halaman riwayat</p>
+          </div>
+        ) : currentMenu === "profil" ? (
+          <div>
+            <p>halaman profil</p>
+          </div>
+        ) : (
+          "404 Halaman Tidak di Temukan"
+        )}
+      </Content>
+      <Footer className="bottom-nav-dashboard" style={footerStyle}>
+        <BottomNav />
+      </Footer>
     </Layout>
   );
 }
