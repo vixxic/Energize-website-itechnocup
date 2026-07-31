@@ -1,158 +1,220 @@
 .formContainer{
-    width:430px;
-    background:linear-gradient(180deg,#3f1d8d,#5124bf);
-    border-radius:24px;
-    padding:32px;
-    color:white;
-    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    width: 420px;
+    background: linear-gradient(180deg, #4523A7 0%, #33177F 100%);
+    border-radius: 24px;
+    padding: 32px;
+    color: #fff;
+    box-shadow: 0 15px 40px rgba(69, 35, 167, 0.25);
 }
 
 .title{
-    font-size:30px;
-    font-weight:700;
-    margin-bottom:8px;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
 }
 
 .subtitle{
-    color:#d9d4ef;
-    font-size:15px;
-    margin-bottom:28px;
-    line-height:1.5;
+    margin-top: 10px;
+    margin-bottom: 28px;
+    color: #DCD4F7;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .formGroup{
-    margin-bottom:22px;
+    margin-bottom: 20px;
 }
 
 .formGroup label{
-    display:block;
-    margin-bottom:10px;
-    font-weight:600;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .inputIcon,
 .quantityInput,
 .selectWrapper{
-    display:flex;
-    align-items:center;
-    background:#fff;
-    border-radius:12px;
-    height:54px;
-    overflow:hidden;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    height: 54px;
+    overflow: hidden;
 }
 
 .inputIcon input,
 .quantityInput input,
 .selectWrapper select{
-    flex:1;
-    border:none;
-    outline:none;
-    background:none;
-    padding:0 18px;
-    font-size:15px;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 18px;
+    font-size: 15px;
+    color: #333;
 }
 
-.selectWrapper select{
-    appearance:none;
-    cursor:pointer;
+.inputIcon input::placeholder,
+.quantityInput input::placeholder{
+    color: #9e9e9e;
 }
 
 .icon{
-    font-size:20px;
-    color:#5d34ca;
-    margin-right:18px;
+    margin-right: 18px;
+    font-size: 20px;
+    color: #6441D8;
+}
+
+.selectWrapper{
+    position: relative;
+}
+
+.selectWrapper select{
+    appearance: none;
+    cursor: pointer;
+}
+
+.selectWrapper .icon{
+    position: absolute;
+    right: 0;
 }
 
 .quantityInput{
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 .counter{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
     margin-right:12px;
 }
 
+.counter span{
+    color:#444;
+    font-weight:600;
+}
+
 .counter button{
-    width:32px;
-    height:32px;
+    width:30px;
+    height:30px;
     border:none;
     border-radius:8px;
-    background:#f3f3f3;
+    background:#F1F1F1;
+    color:#5F3BD7;
     cursor:pointer;
-    color:#5d34ca;
-    font-size:16px;
+
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
+    transition:.2s;
 }
 
 .counter button:hover{
-    background:#e7e4f8;
+    background:#E7E0FF;
 }
 
 .checkbox{
     display:flex;
     align-items:center;
     gap:10px;
-    margin-bottom:22px;
+    margin:18px 0;
 }
 
 .checkbox input{
     width:18px;
     height:18px;
-    accent-color:#7b4fff;
+    accent-color:#8D63FF;
 }
 
 .checkbox label{
     font-size:14px;
+    color:#F5F5F5;
 }
 
 .infoCard{
-    background:#f2ecff;
+    background:#EFE9FF;
     border-radius:14px;
     padding:16px;
     display:flex;
     gap:14px;
-    margin-bottom:24px;
+    align-items:flex-start;
+    margin-bottom:22px;
 }
 
 .lamp{
     font-size:34px;
-    color:#8c5cff;
+    color:#8A5BFF;
+    flex-shrink:0;
 }
 
 .infoCard h4{
-    color:#43257d;
-    margin-bottom:6px;
+    margin:0;
+    color:#4B2BA6;
+    font-size:16px;
 }
 
 .infoCard p{
+    margin-top:6px;
     color:#666;
-    font-size:14px;
+    font-size:13px;
     line-height:1.5;
 }
 
 .addButton{
     width:100%;
-    height:56px;
+    height:52px;
+
     border:none;
-    border-radius:14px;
-    background:linear-gradient(90deg,#8b5cff,#a04dff);
-    color:white;
-    font-size:16px;
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#864CFF,#A154FF);
+
+    color:#fff;
+    font-size:15px;
     font-weight:600;
+
     cursor:pointer;
 
     display:flex;
-    align-items:center;
     justify-content:center;
-    gap:10px;
+    align-items:center;
+    gap:8px;
 
     transition:.3s;
 }
 
 .addButton:hover{
-    transform:translateY(-2px);
+    opacity:.9;
 }
+
+@media (max-width:768px){
+
+    .formContainer{
+        width:100%;
+        padding:24px;
+    }
+
+}
+
+html,
+body{
+    overflow-y: auto !important;
+}
+
+main{
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+.formContainer{
+    width: 420px;
+    height: auto !important;
+    min-height: unset !important;
+    overflow: visible !important;
+    margin-bottom: 40px;
+}
+
