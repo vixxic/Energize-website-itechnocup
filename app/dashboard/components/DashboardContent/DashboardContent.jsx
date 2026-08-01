@@ -6,6 +6,7 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import { IoWallet } from "react-icons/io5";
 import { HiOutlineChartBar } from "react-icons/hi";
 import { TbPercentage25 } from "react-icons/tb";
+import { PresentaseBoros } from "../PresentaseBoros/PresentaseBoros";
 
 const userDataListrik = [
   {
