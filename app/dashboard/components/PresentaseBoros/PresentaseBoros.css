@@ -1,0 +1,205 @@
+.borosCard{
+    background:#fff;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    width:100%;
+}
+
+.borosTitle h2{
+    color:#1E2154;
+    font-size:32px;
+    font-weight:700;
+}
+
+.borosTitle p{
+    color:#6b6b6b;
+    margin-top:8px;
+}
+
+.borosContent{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    margin-top:30px;
+}
+
+.donutWrapper{
+    width:340px;
+    display:flex;
+    justify-content:center;
+}
+
+.donut{
+    width:270px;
+    height:270px;
+    border-radius:50%;
+    background:
+    conic-gradient(
+        #6A3EF5 0deg 255deg,
+        #FFA726 255deg 330deg,
+        #7BC96F 330deg 360deg
+    );
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.donutCenter{
+    width:185px;
+    height:185px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.donutCenter h1{
+    font-size:52px;
+    color:#1E2154;
+    margin:0;
+}
+
+.donutCenter p{
+    width:120px;
+    text-align:center;
+    color:#777;
+    margin-top:10px;
+}
+
+.deviceList{
+    flex:1;
+}
+
+.deviceItem{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:1px solid #ececec;
+    border-radius:18px;
+    padding:18px 22px;
+    margin-bottom:18px;
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.number{
+    width:38px;
+    height:38px;
+    color:white;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:700;
+}
+
+.deviceIcon{
+    width:55px;
+    height:55px;
+    background:#F6F6F6;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.left h3{
+    margin:0;
+    color:#222;
+}
+
+.left span{
+    color:#666;
+    font-size:15px;
+}
+
+.right{
+    width:260px;
+}
+
+.right strong{
+    display:block;
+    text-align:right;
+    margin-bottom:10px;
+    color:#1E2154;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:#ECECEC;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    border-radius:30px;
+}
+
+.right span{
+    float:right;
+    margin-top:6px;
+    font-weight:600;
+}
+
+.lihatSemua{
+    text-align:right;
+    margin-top:18px;
+    color:#6A3EF5;
+    font-weight:600;
+    cursor:pointer;
+}
+
+@media(max-width:1100px){
+
+.borosContent{
+    flex-direction:column;
+}
+
+.deviceList{
+    width:100%;
+}
+
+.right{
+    width:200px;
+}
+
+}
+
+@media(max-width:768px){
+
+.deviceItem{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.right{
+    width:100%;
+}
+
+.donut{
+    width:220px;
+    height:220px;
+}
+
+.donutCenter{
+    width:145px;
+    height:145px;
+}
+
+.donutCenter h1{
+    font-size:40px;
+}
+
+}
