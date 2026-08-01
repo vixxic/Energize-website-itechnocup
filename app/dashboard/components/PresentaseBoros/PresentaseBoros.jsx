@@ -1,11 +1,8 @@
 import React from "react";
 import "./PresentaseBoros.css";
-import {
-  AirConditionerOutlined,
-  DashboardOutlined,
-} from "@ant-design/icons";
+import { AirConditionerOutlined, DashboardOutlined } from "@ant-design/icons";
 
-export default function PresentaseBoros() {
+function PresentaseBoros() {
   const data = [
     {
       no: 1,
@@ -41,62 +38,44 @@ export default function PresentaseBoros() {
 
   return (
     <div className="borosCard">
-
       <div className="borosTitle">
         <h2>3 Perangkat Paling Boros</h2>
         <p>Perangkat dengan konsumsi energi tertinggi di rumah Anda.</p>
       </div>
 
       <div className="borosContent">
-
         <div className="donutWrapper">
-
           <div className="donut">
             <div className="donutCenter">
               <h1>71%</h1>
               <p>Total konsumsi dari 3 perangkat</p>
             </div>
           </div>
-
         </div>
 
         <div className="deviceList">
-
           {data.map((item) => (
-
             <div className="deviceItem" key={item.no}>
-
               <div className="left">
-
-                <div
-                  className="number"
-                  style={{ background: item.color }}
-                >
+                <div className="number" style={{ background: item.color }}>
                   {item.no}
                 </div>
 
-                <div className="deviceIcon">
-                  {item.icon}
-                </div>
+                <div className="deviceIcon">{item.icon}</div>
 
                 <div>
-
                   <h3>{item.nama}</h3>
 
                   <span>
                     {item.waktu} • {item.watt}
                   </span>
-
                 </div>
-
               </div>
 
               <div className="right">
-
                 <strong>{item.konsumsi}</strong>
 
                 <div className="progress">
-
                   <div
                     className="fill"
                     style={{
@@ -104,25 +83,18 @@ export default function PresentaseBoros() {
                       background: item.color,
                     }}
                   />
-
                 </div>
 
                 <span>{item.persen}%</span>
-
               </div>
-
             </div>
-
           ))}
 
-          <div className="lihatSemua">
-            Lihat semua perangkat (7) →
-          </div>
-
+          <div className="lihatSemua">Lihat semua perangkat (7) →</div>
         </div>
-
       </div>
-
     </div>
   );
 }
+
+export default PresentaseBoros;
