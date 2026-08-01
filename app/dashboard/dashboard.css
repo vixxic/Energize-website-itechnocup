@@ -95,3 +95,25 @@
     background-color: var(--pallet-nila);
   }
 }
+
+.topSection{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+    align-items:start;
+    margin-top:24px;
+}
+
+.leftSection{
+    min-width:0;
+}
+
+.rightSection{
+    min-width:0;
+}
+
+@media(max-width:1100px){
+    .topSection{
+        grid-template-columns:1fr;
+    }
+}

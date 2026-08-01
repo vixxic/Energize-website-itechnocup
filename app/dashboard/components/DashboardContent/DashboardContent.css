@@ -1,0 +1,7 @@
+<div className="TopSection">
+<PresentaseBoros/>
+<FollowUpAi/>
+<div/>
+.FollowUpAi {
+ display: flex
+}

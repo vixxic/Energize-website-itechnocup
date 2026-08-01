@@ -9,6 +9,7 @@ import { TbPercentage25 } from "react-icons/tb";
 
 // components
 import PresentaseBoros from "../PresentaseBoros/PresentaseBoros";
+import FollowUpAi from "../FollowUpAi/FollowUpAi";
 
 const userDataListrik = [
   {
@@ -55,6 +56,7 @@ function DashboardContent() {
         ))}
       </div>
       <PresentaseBoros />
+      <FollowUpAi />
     </div>
   );
 }
