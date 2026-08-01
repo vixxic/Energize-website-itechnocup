@@ -9,7 +9,7 @@ import BottomNav from "./components/BottomNav/BottomNav";
 import SiderNav from "./components/SiderNav/SiderNav";
 import FormInputData from "./components/FormInputData/FormInputData";
 import DashboardContent from "./components/DashboardContent/DashboardContent";
-import PresentaseBoros from "./components/PresentaseBoros/PresentaseBoros";
+import PresentaseBoros from "./components/PresentaseBoros/PresentaseBoros";g
 
 import { Layout, Button } from "antd";
 
