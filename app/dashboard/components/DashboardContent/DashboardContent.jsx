@@ -48,10 +48,11 @@ function DashboardContent() {
               <p>{data.title}</p>
               <p></p>
               <p></p>
-            </div>
+            </div> 
           </div>
         ))}
       </div>
+      <PresentaseBoros />
     </div>
   );
 }
