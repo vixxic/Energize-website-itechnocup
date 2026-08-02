@@ -1,4 +1,4 @@
-import React from "react";
+import "./DashboardContent.css";
 
 // icons
 import { MdWavingHand } from "react-icons/md";
@@ -6,12 +6,18 @@ import { BsFillLightningChargeFill } from "react-icons/bs";
 import { IoWallet } from "react-icons/io5";
 import { HiOutlineChartBar } from "react-icons/hi";
 import { TbPercentage25 } from "react-icons/tb";
+import { IoMdPeople } from "react-icons/io";
 
 // components
 import PresentaseBoros from "../PresentaseBoros/PresentaseBoros";
 import FollowUpAi from "../FollowUpAi/FollowUpAi";
 
 const userDataListrik = [
+  {
+    icon: <IoMdPeople color="#0C0850" size={30} />,
+    bgColor: "#f1f1f9",
+    title: "Jumlah Penghuni",
+  },
   {
     icon: <BsFillLightningChargeFill color="#7956EA" size={30} />,
     bgColor: "#F8F2FA",
@@ -43,7 +49,8 @@ function DashboardContent() {
         </p>
         <p>Berikut adalah hasil analisis penggunaan energi rumah anda</p>
       </div>
-      <div className="data-listrik-user">
+
+      <div className="div-1-con data-listrik-user">
         {userDataListrik.map((data, index) => (
           <div key={index} className="data-con">
             <div style={{ backgroundColor: data.bgColor }}>{data.icon}</div>
@@ -55,8 +62,11 @@ function DashboardContent() {
           </div>
         ))}
       </div>
-      <PresentaseBoros />
-      <FollowUpAi />
+
+      <div className="div-2-con">
+        <PresentaseBoros />
+        <FollowUpAi />
+      </div>
     </div>
   );
 }

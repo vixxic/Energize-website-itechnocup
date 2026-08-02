@@ -1,7 +1,43 @@
-<div className="TopSection">
-<PresentaseBoros/>
-<FollowUpAi/>
-<div/>
-.FollowUpAi {
- display: flex
+.header-text-con-dashboard p:first-child {
+  margin: 0%;
+  font-size: clamp(20px, 1.5vw, 30px);
+  font-weight: bold;
+  color: var(--pallet-nila);
+}
+
+.header-text-con-dashboard p {
+  margin: 0.7vw 0;
+  color: var(--pallet-nila);
+  font-weight: 400;
+}
+
+.data-listrik-user {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  margin: 2vw 0;
+}
+
+.data-con {
+  background-color: #fdfcfa;
+  padding: 0.7vw;
+  display: flex;
+
+  border: 1px solid #f4eadd;
+  box-shadow: 0 8px 24px rgba(170, 140, 110, 0.08);
+  border-radius: 10px;
+}
+
+.data-con div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  border-radius: 15px;
+}
+
+.div-2-con {
+  display: flex;
+  gap: 2vw;
 }

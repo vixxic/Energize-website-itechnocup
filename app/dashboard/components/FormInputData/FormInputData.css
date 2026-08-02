@@ -1,39 +1,107 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
 .analisis-page {
   display: flex;
-  gap: 2vw;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.formContainer {
-  width: 420px;
-  background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
-  border-radius: 15px;
+.midle-section {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* =========================
+   HOME PROFILE
+========================= */
+
+.home-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
   padding: 24px;
-  color: #fff;
+
+  border-radius: 18px;
+
+  color: white;
+
+  background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
+
   box-shadow: 0 15px 40px rgba(69, 35, 167, 0.25);
 }
 
+.home-profile-form-input-con {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+
+.device-form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 24px;
+
+  border-radius: 18px;
+
+  color: white;
+
+  background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
+
+  box-shadow: 0 15px 40px rgba(69, 35, 167, 0.25);
+}
+
+.device-form-right {
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* =========================
+   TITLE
+========================= */
+
 .title {
+  margin: 0;
+
   font-size: 28px;
   font-weight: 700;
-  margin: 0;
 }
 
 .subtitle {
-  margin-top: 10px;
-  margin-bottom: 24px;
+  margin: 10px 0 24px;
+
   color: #dcd4f7;
-  font-size: 16px;
+
+  font-size: 15px;
   line-height: 1.5;
 }
 
+/* =========================
+   FORM
+========================= */
+
 .formGroup {
   margin-bottom: 18px;
+  height: max-content;
 }
 
 .formGroup label {
   display: block;
+
   margin-bottom: 8px;
-  font-size: 15px;
+
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -42,48 +110,58 @@
 .selectWrapper {
   display: flex;
   align-items: center;
-  background: #fff;
-  border-radius: 6px;
+
+  min-height: 54px;
+
+  background: white;
+
+  border-radius: 10px;
+
   overflow: hidden;
-  padding: 14px 0;
 }
 
 .inputIcon input,
 .quantityInput input,
 .selectWrapper select {
   flex: 1;
+
   border: none;
   outline: none;
+
   background: transparent;
+
   padding: 0 18px;
-  font-size: 15px;
+
+  font-size: 14px;
+
   color: #333;
 }
 
 .inputIcon input::placeholder,
 .quantityInput input::placeholder {
-  color: #9e9e9e;
+  color: #999;
 }
 
 .icon {
   margin-right: 18px;
+
+  color: #6f48e8;
+
   font-size: 20px;
-  color: #6441d8;
 }
 
 .selectWrapper {
-  position: relative;
+  width: 100%;
 }
 
-.selectWrapper select {
-  appearance: none;
-  cursor: pointer;
+.selectWrapper .ant-select {
+  width: 100%;
+  min-height: 54px;
 }
 
-.selectWrapper .icon {
-  position: absolute;
-  right: 0;
-}
+/* =========================
+   QUANTITY
+========================= */
 
 .quantityInput {
   justify-content: space-between;
@@ -91,193 +169,158 @@
 
 .counter {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-right: 12px;
-}
+  gap: 8px;
 
-.counter span {
-  color: #444;
-  font-weight: 600;
+  margin-right: 12px;
 }
 
 .counter button {
   width: 30px;
   height: 30px;
+
   border: none;
   border-radius: 8px;
-  background: #f1f1f1;
-  color: #5f3bd7;
+
   cursor: pointer;
+
+  background: #f1ecff;
+
+  color: #6b43e5;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  transition: 0.2s;
 }
 
 .counter button:hover {
-  background: #e7e0ff;
+  background: #e7ddff;
 }
+
+/* =========================
+   CHECKBOX
+========================= */
 
 .checkbox {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 18px 0;
+
+  margin-top: 20px;
 }
 
 .checkbox input {
-  width: 18px;
-  height: 18px;
-  accent-color: #8d63ff;
+  accent-color: #9364ff;
 }
 
 .checkbox label {
   font-size: 14px;
-  color: #f5f5f5;
 }
 
+/* =========================
+   ESTIMATION CARD
+========================= */
+
 .infoCard {
-  background: #efe9ff;
-  border-radius: 6px;
-  padding: 16px;
-  box-sizing: border-box;
-
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 16px;
 
-  gap: 14px;
-  margin-bottom: 22px;
+  padding: 18px;
+
+  border-radius: 12px;
+
+  background: #efe9ff;
+  margin: 18px 0;
 }
 
 .lamp {
-  font-size: 50px;
-  color: #8a5bff;
-  margin-left: 14px;
+  color: #8c5cff;
+  font-size: 40px;
 }
 
 .infoCard h4 {
-  margin-top: 6px;
   margin: 0;
-  color: #4b2ba6;
-  font-size: 16px;
+
+  color: #4c2ba8;
 }
 
 .infoCard p {
-  margin: 6px 0;
-  color: #4b2ba6;
+  margin-top: 6px;
+
+  color: #5b47a1;
+
   font-size: 13px;
-  font-weight: 400;
+
   line-height: 1.5;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 .purple-btn {
   width: 100%;
+
   padding: 14px;
+
   border: none;
-  border-radius: 6px;
-
-  background: linear-gradient(90deg, #864cff, #a154ff);
-
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
+  border-radius: 10px;
 
   cursor: pointer;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background: linear-gradient(90deg, #8a4fff, #a85eff);
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-
-  transition: 0.3s;
 }
 
-.addButton:hover {
+.purple-btn:hover {
   opacity: 0.9;
 }
 
-html,
-body {
-  overflow-y: auto !important;
+.error {
+  color: rgb(250, 63, 63);
 }
 
-main {
-  overflow-y: auto !important;
-  height: auto !important;
-  min-height: 100vh;
-}
-
-.formContainer {
-  width: 420px;
-  height: auto !important;
-  min-height: unset !important;
-  overflow: visible !important;
-  margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-  .analisis-page {
-    flex-direction: column;
-  }
-  .formContainer {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .inputIcon,
-  .quantityInput,
-  .selectWrapper {
-    padding: 12px 0;
-  }
-
-  .infoCard {
-    padding: 14px;
-  }
-
-  .addButton {
-    padding: 12px;
-  }
-}
-
-/* device container */
+/* =========================
+   DEVICE LIST
+========================= */
 
 .device-list-container {
-  background: #fffdfb;
-  border-radius: 15px;
   padding: 24px;
 
-  border: 1px solid rgba(137, 43, 226, 0.1);
+  border-radius: 18px;
+
+  background: white;
+
+  border: 1px solid rgba(120, 87, 255, 0.1);
 
   box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.05),
-    0 4px 10px rgba(128, 90, 213, 0.08);
+    0 10px 25px rgba(0, 0, 0, 0.04),
+    0 5px 15px rgba(120, 87, 255, 0.08);
+}
 
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  margin-bottom: 40px;
+.device-list-header {
+  margin-bottom: 24px;
 }
 
 .device-list-header h2 {
-  color: #292277;
-  font-size: 2rem;
   margin: 0;
+
+  color: #2c2476;
 }
 
 .device-list-header p {
-  color: #666;
-  margin-top: 10px;
-}
+  margin-top: 8px;
 
-.device-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  color: #777;
 }
 
 .device-card {
@@ -285,78 +328,151 @@ main {
   justify-content: space-between;
   align-items: center;
 
-  padding: 18px 22px;
+  padding: 10px;
 
-  border-radius: 16px;
-  border: 1px solid #efe5db;
+  border-radius: 12px;
 
-  background-color: white;
+  border: 1px solid #ece4ff;
 
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .device-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
 }
 
 .device-info {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 }
 
 .device-info img {
-  width: 48px;
+  width: 44px;
 }
 
 .device-info h3 {
-  color: #312783;
-  font-size: 1.1rem;
-  margin-bottom: 4px;
+  margin: 0;
+
+  color: #322887;
+
+  font-size: 15px;
 }
 
 .device-info p {
-  color: #666;
-  font-size: 0.95rem;
+  margin-top: 6px;
+
+  color: #777;
+
+  font-size: 13px;
 }
 
 .device-actions {
   display: flex;
-  gap: 18px;
+  gap: 10px;
 }
 
 .device-actions button {
-  background: transparent;
   border: none;
+  background: transparent;
+
   cursor: pointer;
-  font-size: 1.2rem;
 }
 
-.device-actions button:first-child {
-  color: #7a3cff;
-}
-
-.device-actions button:last-child {
-  color: #ff4040;
-}
+/* =========================
+   ANALYSIS CARD
+========================= */
 
 .start-analisis-button-con {
-  background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
-  height: fit-content;
-  border-radius: 15px;
-  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
   padding: 24px;
-  margin-bottom: 40px;
+
+  border-radius: 18px;
+
+  color: white;
+
+  background: linear-gradient(180deg, #2e2371 0%, #33177f 100%);
 }
 
 .start-analisis-button-con div p:first-child {
-  font-size: 15px;
+  margin-bottom: 8px;
+
+  font-size: 18px;
   font-weight: 700;
-  margin: 0;
 }
 
-.start-analisis-button-con div p {
-  font-size: 13px;
+.start-analisis-button-con div p:last-child {
+  color: #d6cdfc;
+
+  font-size: 14px;
+}
+
+.to-analisis-btn {
+  width: fit-content;
+  padding: 14px 24px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .top-section {
+    grid-template-columns: 1fr;
+  }
+
+  .device-form-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-profile-form-input-con {
+    grid-template-columns: 1fr;
+  }
+
+  .midle-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-profile-form,
+  .device-form-card,
+  .device-list-container,
+  .start-analisis-button-con {
+    padding: 18px;
+  }
+
+  .home-profile-form-input-con {
+    grid-template-columns: 1fr;
+  }
+
+  .device-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .device-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .device-list {
+    grid-template-columns: 1fr;
+  }
+
+  .start-analisis-button-con {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .to-analisis-btn {
+    width: 100%;
+  }
 }

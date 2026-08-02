@@ -1,81 +1,269 @@
 import "./FormInputData.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
+import { DashboardContext } from "../../context/DashboardContext";
+
+// icons
 import { FaDesktop } from "react-icons/fa";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { LuClock3 } from "react-icons/lu";
 import { FiChevronDown, FiMinus, FiPlus } from "react-icons/fi";
+import { MdDelete } from "react-icons/md";
+
+import { Select } from "antd";
 
 export default function FormInputData() {
-  const [quantity, setQuantity] = useState(1);
+  const { devicesData, setDevicesData } = useContext(DashboardContext);
+
+  const powerOptions = [
+    { value: "450", label: "450 VA" },
+    { value: "900", label: "900 VA" },
+    { value: "1300", label: "1300 VA" },
+    { value: "2200", label: "2200 VA" },
+    { value: "3500", label: "3500 VA" },
+    { value: "4400", label: "4400 VA" },
+    { value: "5500", label: "5500 VA" },
+    { value: "6600", label: "6600 VA" },
+  ];
+
+  // error
+  const [errorName, setErrorName] = useState("");
+  const [errorQuantity, setErrorQuantity] = useState("");
+  const [errorPower, setErrorPower] = useState("");
+  const [errorDuration, setErrorDuration] = useState("");
+
+  const [deviceData, setDeviceData] = useState({
+    deviceName: "",
+    quantity: 1,
+    devicePower: "",
+    estimatedPower: false,
+    usageDuration: 0,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    setDeviceData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+
+    console.log(deviceData);
+  };
+
+  const getFormData = (e) => {
+    e.preventDefault();
+    let hasError = false;
+
+    // cek error name
+    const regex = /^(?=.*[a-zA-Z])[a-zA-Z0-9\s/-]{2,50}$/;
+
+    if (!deviceData.deviceName.trim()) {
+      setErrorName("Masukkan nama perangkat terlebih dahulu.");
+      hasError = true;
+    } else if (!regex.test(deviceData.deviceName)) {
+      setErrorName(
+        "Nama perangkat hanya boleh berisi huruf, angka, spasi, garis miring (/), tanda hubung (-) dan minimal 2 karakter.",
+      );
+      hasError = true;
+    } else {
+      setErrorName("");
+    }
+
+    // cek error quantity
+    if (deviceData.quantity <= 0) {
+      setErrorQuantity("Jumlah perangkat minimal 1");
+      hasError = true;
+    }
+
+    // cek error power
+    if (deviceData.estimatedPower) {
+      setDeviceData.estimatedPower = true;
+      setErrorPower("");
+    } else {
+      if (deviceData.devicePower <= 0) {
+        setErrorPower("Masukan daya yang valid atau gunakan estimasi daya");
+        hasError = true;
+      }
+    }
+
+    // cek duration usage
+    if (deviceData.usageDuration <= 0) {
+      setErrorDuration("Durasi penggunaan harus lebih dari 0 jam.");
+      hasError = true;
+    } else {
+      setErrorDuration("");
+    }
+
+    if (hasError) {
+      return;
+    }
+
+    setDevicesData((prev) => [...prev, deviceData]);
+
+    setDeviceData({
+      deviceName: "",
+      quantity: 1,
+      devicePower: "",
+      estimatedPower: false,
+      usageDuration: "",
+    });
+
+    setErrorName("");
+  };
+
+  const handleDelete = (targetIndex) => {
+    const newobj = devicesData.filter((_, index) => index !== targetIndex);
+
+    setDevicesData(newobj);
+    console.log(setDevicesData);
+  };
 
   return (
     <div className="analisis-page">
-      <div>
-        <div className="formContainer">
+      <form className="home-profile-form">
+        {/* title */}
+        <h2 className="title">Profil Rumah</h2>
+
+        <p className="subtitle">
+          Informasi ini membantu AI memahami pola penggunaan energi di rumah
+          anda
+        </p>
+
+        <div className="home-profile-form-input-con">
+          {/* jumlah penghuni */}
+          <div className="formGroup home-profile-item">
+            <label>Jumlah Penghuni</label>
+
+            <div className="inputIcon">
+              <div className="quantityInput">
+                <input
+                  name="quantity"
+                  value={deviceData.quantity}
+                  onChange={handleChange}
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <p className="error">{errorName}</p>
+          </div>
+          {/* daya listrik rumah */}
+          <div className="formGroup home-profile-item">
+            <label>Daya Listrik Rumah</label>
+
+            <div className="selectWrapper">
+              <Select
+                placeholder="Pilih daya listrik rumah"
+                options={powerOptions}
+              />
+            </div>
+          </div>
+          {/* biaya listrik bulanan */}
+          <div className="formGroup home-profile-item">
+            <label>Biaya Listrik Bulanan (opsional)</label>
+
+            <div className="inputIcon">
+              <div className="quantityInput">
+                <input
+                  name="quantity"
+                  value={deviceData.quantity}
+                  onChange={handleChange}
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="infoCard">
+          <HiOutlineLightBulb className="lamp" />
+
+          <div>
+            <h4>Keterangan:</h4>
+
+            <p style={{ margin: 0 }}>
+              Kami akan memperkirakan biaya listrik berdasarkan data perangkat
+              yang Anda masukkan. Hasil perhitungan mungkin berbeda dengan
+              tagihan listrik sebenarnya.
+            </p>
+          </div>
+        </div>
+      </form>
+
+      <div className="midle-section">
+        <form onSubmit={getFormData} className="device-form-card">
+          {/* title */}
           <h2 className="title">Tambah Perangkat Listrik</h2>
 
           <p className="subtitle">Isi informasi perangkat yang Anda gunakan</p>
 
-          {/* Device */}
+          {/* device name */}
           <div className="formGroup">
             <label>Device Name</label>
 
             <div className="inputIcon">
-              <input type="text" placeholder="Contoh: AC, Kulkas, TV LED" />
+              <input
+                name="deviceName"
+                value={deviceData.deviceName}
+                onChange={handleChange}
+                type="text"
+                placeholder="Contoh: AC, Kulkas, TV LED"
+              />
 
               <FaDesktop className="icon" />
             </div>
+
+            <p className="error">{errorName}</p>
           </div>
 
-          {/* Quantity */}
+          {/* quantity */}
           <div className="formGroup">
             <label>Quantity</label>
 
             <div className="quantityInput">
-              <input type="number" value={quantity} readOnly />
-
-              <div className="counter">
-                <button
-                  onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                >
-                  <FiMinus />
-                </button>
-
-                <button onClick={() => setQuantity(quantity + 1)}>
-                  <FiPlus />
-                </button>
-              </div>
+              <input
+                name="quantity"
+                value={deviceData.quantity}
+                onChange={handleChange}
+                type="text"
+              />
             </div>
+
+            <p className="error">{errorQuantity}</p>
           </div>
 
-          {/* Power */}
+          {/* power */}
           <div className="formGroup">
-            <label>Power (Watt)</label>
+            <label>Power (Watt/perangkat)</label>
 
-            <div className="selectWrapper">
-              <select>
-                <option>Pilih atau masukkan daya perangkat</option>
-
-                <option>60 Watt</option>
-                <option>100 Watt</option>
-                <option>250 Watt</option>
-                <option>450 Watt</option>
-                <option>900 Watt</option>
-              </select>
-
-              <FiChevronDown className="icon" />
+            <div className="inputIcon">
+              <input
+                name="devicePower"
+                value={deviceData.devicePower}
+                onChange={handleChange}
+                type="text"
+                placeholder="Contoh: 100, 50, 10"
+              />
             </div>
+
+            <p className="error">{errorPower}</p>
           </div>
 
-          {/* Checkbox */}
+          {/* checkbox */}
           <div className="checkbox">
-            <input type="checkbox" id="cek" />
+            <input
+              name="estimatedPower"
+              checked={deviceData.estimatedPower}
+              onChange={handleChange}
+              type="checkbox"
+              id="cek"
+            />
 
             <label htmlFor="cek">Saya tidak tahu daya perangkat ini</label>
           </div>
 
-          {/* Info */}
+          {/* estimation card */}
           <div className="infoCard">
             <HiOutlineLightBulb className="lamp" />
 
@@ -89,109 +277,58 @@ export default function FormInputData() {
             </div>
           </div>
 
-          {/* Usage */}
+          {/* usage duration */}
           <div className="formGroup">
             <label>Usage Duration (hours/day)</label>
 
             <div className="inputIcon">
-              <input type="number" placeholder="Contoh: 5" />
+              <input
+                name="usageDuration"
+                value={deviceData.usageDuration}
+                onChange={handleChange}
+                type="text"
+                placeholder="Contoh: 5"
+              />
 
               <LuClock3 className="icon" />
             </div>
+
+            <p className="error">{errorDuration}</p>
           </div>
 
-          <button className="addButton purple-btn">
+          <button className="purple-btn">
             <FiPlus />
             Tambah ke Daftar
           </button>
-        </div>
-      </div>
+        </form>
 
-      <div className="device-list-container">
-        <div className="device-list-header">
-          <h2>Daftar Perangkat</h2>
-          <p>Perangkat yang telah Anda tambahkan</p>
-        </div>
-
-        <div className="device-list">
-          <div className="device-card">
-            <div className="device-info">
-              <img src="/assets/ac.png" alt="" />
-
-              <div>
-                <h3>AC</h3>
-                <p>1 unit • 800 W • 8 jam/hari</p>
-              </div>
-            </div>
-
-            <div className="device-actions">
-              <button>✏️</button>
-              <button>🗑️</button>
-            </div>
+        <div className="device-list-container">
+          <div className="device-list-header">
+            <h2>Daftar Perangkat</h2>
+            <p>Perangkat yang telah Anda tambahkan</p>
           </div>
 
-          <div className="device-card">
-            <div className="device-info">
-              <img src="/assets/fridge.png" alt="" />
+          <div className="device-list">
+            {devicesData.map((item, index) => (
+              <div key={index} className="device-card">
+                <div className="device-info">
+                  <div>
+                    <h3>{item.deviceName}</h3>
+                    <p>
+                      {item.quantity} unit •{" "}
+                      {item.estimatedPower ? "Estimasi " : item.devicePower}W •{" "}
+                      {item.usageDuration} jam/hari
+                    </p>
+                  </div>
+                </div>
 
-              <div>
-                <h3>Kulkas</h3>
-                <p>1 unit • 150 W • 24 jam/hari</p>
+                <div className="device-actions">
+                  <button onClick={() => handleDelete(index)}>
+                    <MdDelete size={20} color="#0C0850" />
+                  </button>
+                </div>
               </div>
-            </div>
-
-            <div className="device-actions">
-              <button>✏️</button>
-              <button>🗑️</button>
-            </div>
-          </div>
-
-          <div className="device-card">
-            <div className="device-info">
-              <img src="/assets/tv.png" alt="" />
-
-              <div>
-                <h3>TV LED</h3>
-                <p>1 unit • 100 W • 5 jam/hari</p>
-              </div>
-            </div>
-
-            <div className="device-actions">
-              <button>✏️</button>
-              <button>🗑️</button>
-            </div>
-          </div>
-
-          <div className="device-card">
-            <div className="device-info">
-              <img src="/assets/washing-machine.png" alt="" />
-
-              <div>
-                <h3>Mesin Cuci</h3>
-                <p>1 unit • 400 W • 1 jam/hari</p>
-              </div>
-            </div>
-
-            <div className="device-actions">
-              <button>✏️</button>
-              <button>🗑️</button>
-            </div>
-          </div>
-
-          <div className="device-card">
-            <div className="device-info">
-              <img src="/assets/rice-cooker.png" alt="" />
-
-              <div>
-                <h3>Rice Cooker</h3>
-                <p>1 unit • 350 W • 1 jam/hari</p>
-              </div>
-            </div>
-
-            <div className="device-actions">
-              <button>✏️</button>
-              <button>🗑️</button>
-            </div>
+            ))}
           </div>
         </div>
       </div>
