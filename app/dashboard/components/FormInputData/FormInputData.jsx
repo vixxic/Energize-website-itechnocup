@@ -13,7 +13,8 @@ import { MdDelete } from "react-icons/md";
 import { Select } from "antd";
 
 export default function FormInputData() {
-  const { devicesData, setDevicesData } = useContext(DashboardContext);
+  const { devicesData, setDevicesData, profilInfo, setProfilInfo } =
+    useContext(DashboardContext);
 
   const powerOptions = [
     { value: "450", label: "450 VA" },
@@ -31,6 +32,7 @@ export default function FormInputData() {
   const [errorQuantity, setErrorQuantity] = useState("");
   const [errorPower, setErrorPower] = useState("");
   const [errorDuration, setErrorDuration] = useState("");
+  const [errorProfil, setErrorProfil] = useState("");
 
   const [deviceData, setDeviceData] = useState({
     deviceName: "",
@@ -45,10 +47,34 @@ export default function FormInputData() {
 
     setDeviceData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]:
+        type === "checkbox"
+          ? checked
+          : type === "number"
+            ? Number(value)
+            : value,
     }));
+  };
 
-    console.log(deviceData);
+  const handleProfileChange = (e) => {
+    const { name, value } = e.target;
+
+    setProfilInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleProfileSubmit = (e) => {
+    e.preventDefault();
+
+    if (profilInfo.penghuni <= 0 || !profilInfo.dayaListrikRumah) {
+      setErrorProfil("Harap lengkapi semua data yang wajib diisi.");
+
+      return;
+    }
+
+    setErrorProfil("");
   };
 
   const getFormData = (e) => {
@@ -74,17 +100,18 @@ export default function FormInputData() {
     if (deviceData.quantity <= 0) {
       setErrorQuantity("Jumlah perangkat minimal 1");
       hasError = true;
+    } else {
+      setErrorQuantity("");
     }
 
     // cek error power
     if (deviceData.estimatedPower) {
-      setDeviceData.estimatedPower = true;
       setErrorPower("");
+    } else if (deviceData.devicePower <= 0) {
+      setErrorPower("Masukkan daya yang valid atau gunakan estimasi daya.");
+      hasError = true;
     } else {
-      if (deviceData.devicePower <= 0) {
-        setErrorPower("Masukan daya yang valid atau gunakan estimasi daya");
-        hasError = true;
-      }
+      setErrorPower("");
     }
 
     // cek duration usage
@@ -106,7 +133,7 @@ export default function FormInputData() {
       quantity: 1,
       devicePower: "",
       estimatedPower: false,
-      usageDuration: "",
+      usageDuration: 0,
     });
 
     setErrorName("");
@@ -116,13 +143,11 @@ export default function FormInputData() {
     const newobj = devicesData.filter((_, index) => index !== targetIndex);
 
     setDevicesData(newobj);
-    console.log(setDevicesData);
   };
 
   return (
     <div className="analisis-page">
-      <form className="home-profile-form">
-        {/* title */}
+      <form onSubmit={handleProfileSubmit} className="home-profile-form">
         <h2 className="title">Profil Rumah</h2>
 
         <p className="subtitle">
@@ -131,24 +156,22 @@ export default function FormInputData() {
         </p>
 
         <div className="home-profile-form-input-con">
-          {/* jumlah penghuni */}
           <div className="formGroup home-profile-item">
             <label>Jumlah Penghuni</label>
 
             <div className="inputIcon">
               <div className="quantityInput">
                 <input
-                  name="quantity"
-                  value={deviceData.quantity}
-                  onChange={handleChange}
-                  type="text"
+                  name="penghuni"
+                  value={profilInfo.penghuni}
+                  onChange={handleProfileChange}
+                  min={1}
+                  type="number"
                 />
               </div>
             </div>
-
-            <p className="error">{errorName}</p>
           </div>
-          {/* daya listrik rumah */}
+
           <div className="formGroup home-profile-item">
             <label>Daya Listrik Rumah</label>
 
@@ -156,27 +179,35 @@ export default function FormInputData() {
               <Select
                 placeholder="Pilih daya listrik rumah"
                 options={powerOptions}
+                onChange={(value) =>
+                  setProfilInfo((prev) => ({
+                    ...prev,
+                    dayaListrikRumah: value,
+                  }))
+                }
+                value={profilInfo.dayaListrikRumah}
               />
             </div>
           </div>
-          {/* biaya listrik bulanan */}
+
           <div className="formGroup home-profile-item">
             <label>Biaya Listrik Bulanan (opsional)</label>
 
             <div className="inputIcon">
               <div className="quantityInput">
                 <input
-                  name="quantity"
-                  value={deviceData.quantity}
-                  onChange={handleChange}
-                  type="text"
+                  name="biayaListrikBulanan"
+                  value={profilInfo.biayaListrikBulanan}
+                  onChange={handleProfileChange}
+                  min={1}
+                  type="number"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="infoCard">
+        <div style={{ justifyContent: "space-between" }} className="infoCard">
           <HiOutlineLightBulb className="lamp" />
 
           <div>
@@ -188,69 +219,101 @@ export default function FormInputData() {
               tagihan listrik sebenarnya.
             </p>
           </div>
+
+          <div>
+            <button
+              type="submit"
+              className="purple-btn"
+              style={{ background: "#8E51FF" }}
+            >
+              Simpan
+            </button>
+          </div>
         </div>
+
+        <p className="error" style={{ margin: 0 }}>
+          {errorProfil}
+        </p>
       </form>
 
       <div className="midle-section">
-        <form onSubmit={getFormData} className="device-form-card">
-          {/* title */}
-          <h2 className="title">Tambah Perangkat Listrik</h2>
+        <form className="device-form-card" onSubmit={getFormData}>
+          <div className="device-form-grid">
+            <h2 className="title">Tambah Perangkat Listrik</h2>
 
-          <p className="subtitle">Isi informasi perangkat yang Anda gunakan</p>
+            <p className="subtitle">
+              Isi informasi perangkat yang Anda gunakan
+            </p>
 
-          {/* device name */}
-          <div className="formGroup">
-            <label>Device Name</label>
+            <div className="formGroup">
+              <label>Device Name</label>
 
-            <div className="inputIcon">
-              <input
-                name="deviceName"
-                value={deviceData.deviceName}
-                onChange={handleChange}
-                type="text"
-                placeholder="Contoh: AC, Kulkas, TV LED"
-              />
+              <div className="inputIcon">
+                <input
+                  name="deviceName"
+                  value={deviceData.deviceName}
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Contoh: AC, Kulkas, TV"
+                />
+                <FaDesktop className="icon" />
+              </div>
 
-              <FaDesktop className="icon" />
+              <p className="error">{errorName}</p>
             </div>
 
-            <p className="error">{errorName}</p>
-          </div>
+            <div className="formGroup">
+              <label>Quantity</label>
 
-          {/* quantity */}
-          <div className="formGroup">
-            <label>Quantity</label>
+              <div className="quantityInput">
+                <input
+                  name="quantity"
+                  value={deviceData.quantity}
+                  onChange={handleChange}
+                  min={1}
+                  type="number"
+                />
+              </div>
 
-            <div className="quantityInput">
-              <input
-                name="quantity"
-                value={deviceData.quantity}
-                onChange={handleChange}
-                type="text"
-              />
+              <p className="error">{errorQuantity}</p>
             </div>
 
-            <p className="error">{errorQuantity}</p>
-          </div>
+            <div className="formGroup">
+              <label>Power (Watt/perangkat)</label>
 
-          {/* power */}
-          <div className="formGroup">
-            <label>Power (Watt/perangkat)</label>
+              <div className="inputIcon">
+                <input
+                  name="devicePower"
+                  value={deviceData.devicePower}
+                  onChange={handleChange}
+                  type="number"
+                  min={1}
+                  placeholder="Contoh: 100"
+                />
+              </div>
 
-            <div className="inputIcon">
-              <input
-                name="devicePower"
-                value={deviceData.devicePower}
-                onChange={handleChange}
-                type="text"
-                placeholder="Contoh: 100, 50, 10"
-              />
+              <p className="error">{errorPower}</p>
             </div>
 
-            <p className="error">{errorPower}</p>
+            <div className="formGroup">
+              <label>Usage Duration (hours/day)</label>
+
+              <div className="inputIcon">
+                <input
+                  name="usageDuration"
+                  value={deviceData.usageDuration}
+                  onChange={handleChange}
+                  min={1}
+                  type="number"
+                  placeholder="Contoh: 5"
+                />
+                <LuClock3 className="icon" />
+              </div>
+
+              <p className="error">{errorDuration}</p>
+            </div>
           </div>
 
-          {/* checkbox */}
           <div className="checkbox">
             <input
               name="estimatedPower"
@@ -263,7 +326,6 @@ export default function FormInputData() {
             <label htmlFor="cek">Saya tidak tahu daya perangkat ini</label>
           </div>
 
-          {/* estimation card */}
           <div className="infoCard">
             <HiOutlineLightBulb className="lamp" />
 
@@ -277,26 +339,7 @@ export default function FormInputData() {
             </div>
           </div>
 
-          {/* usage duration */}
-          <div className="formGroup">
-            <label>Usage Duration (hours/day)</label>
-
-            <div className="inputIcon">
-              <input
-                name="usageDuration"
-                value={deviceData.usageDuration}
-                onChange={handleChange}
-                type="text"
-                placeholder="Contoh: 5"
-              />
-
-              <LuClock3 className="icon" />
-            </div>
-
-            <p className="error">{errorDuration}</p>
-          </div>
-
-          <button className="purple-btn">
+          <button type="submit" className="purple-btn">
             <FiPlus />
             Tambah ke Daftar
           </button>
@@ -323,7 +366,7 @@ export default function FormInputData() {
                 </div>
 
                 <div className="device-actions">
-                  <button onClick={() => handleDelete(index)}>
+                  <button type="button" onClick={() => handleDelete(index)}>
                     <MdDelete size={20} color="#0C0850" />
                   </button>
                 </div>
@@ -343,7 +386,7 @@ export default function FormInputData() {
           </p>
         </div>
 
-        <button className="to-analisis-btn purple-btn">
+        <button type="button" className="to-analisis-btn purple-btn">
           Lanjutkan ke Analisis →
         </button>
       </div>

@@ -49,7 +49,7 @@
 .device-form-card {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 18px;
 
   padding: 24px;
 
@@ -65,6 +65,16 @@
 .device-form-right {
   gap: 20px;
   justify-content: space-between;
+}
+
+.device-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.device-form-grid .formGroup {
+  margin-bottom: 0;
 }
 
 /* =========================
@@ -474,5 +484,9 @@
 
   .to-analisis-btn {
     width: 100%;
+  }
+
+  .device-form-grid {
+    grid-template-columns: 1fr;
   }
 }

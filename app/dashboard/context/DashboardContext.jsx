@@ -8,6 +8,11 @@ export function DashboardProvider({ children }) {
   const [currentMenu, setCurrentMenu] = useState("analisis");
 
   const [devicesData, setDevicesData] = useState([]);
+  const [profilInfo, setProfilInfo] = useState({
+    penghuni: 1,
+    dayaListrikRumah: "",
+    biayaListikBulanan: "",
+  });
 
   return (
     <DashboardContext.Provider
@@ -16,6 +21,8 @@ export function DashboardProvider({ children }) {
         setCurrentMenu,
         devicesData,
         setDevicesData,
+        profilInfo,
+        setProfilInfo,
       }}
     >
       {children}
