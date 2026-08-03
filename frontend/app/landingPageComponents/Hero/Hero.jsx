@@ -8,19 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
   useEffect(() => {
-    // const tl = gsap.timeline({
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".home-section",
-    //     start: "10% top",
-    //     end: "bottom top",
-    //     markers: true,
-    //     scrub: true,
-    //   },
-    // });
-
-    // tl.to(".layer1", { y: -100 }).to(".layer2", { y: 300 }, "<");
-
     gsap.to(".layer1", {
       y: -50,
       ease: "none",
@@ -39,7 +26,6 @@ function Hero() {
         trigger: ".home-section",
         start: "10% top",
         end: "bottom top",
-        markers: true,
         scrub: true,
       },
     });
@@ -50,7 +36,6 @@ function Hero() {
         trigger: ".home-section",
         start: "10% top",
         end: "bottom top",
-        markers: true,
         scrub: true,
       },
     });
@@ -68,7 +53,7 @@ function Hero() {
           <button className="analyze-btn-hero">Analisis Sekarang</button>
         </div>
         <img className="layer1" src="/parallax-effect/layer-1-parallax.png" />
-        <img className="layer2" src="/parallax-effect/layer-2-parallax.png" />
+        <img className="layer2" src="/parallax-effect/p.png" />
         <img className="layer3" src="/parallax-effect/layer-3-parallax.png" />
       </div>
     </div>

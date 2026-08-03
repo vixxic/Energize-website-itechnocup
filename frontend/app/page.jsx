@@ -11,7 +11,6 @@ import Footer from "./components/Footer/Footer";
 
 // landing page
 
-// import Beranda from "./landingPageComponents/Beranda/Beranda";
 import Hero from "./landingPageComponents/Hero/Hero";
 import Problem from "./landingPageComponents/Problem/Problem";
 import Problem2 from "./landingPageComponents/Problem2/Problem2";
@@ -21,68 +20,11 @@ import HowItWorks from "./landingPageComponents/HowItWorks/HowItWorks";
 import Impact from "./landingPageComponents/Impact/Impact";
 
 export default function Home() {
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     ".awan-parallax",
-  //     {
-  //       y: 0,
-  //     },
-  //     {
-  //       y: "-40%",
-  //       ease: "none",
-
-  //       scrollTrigger: {
-  //         trigger: ".problem-section",
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: true,
-  //       },
-  //     },
-  //   );
-
-  //   gsap.fromTo(
-  //     ".rumah-img",
-  //     {
-  //       y: 0,
-  //     },
-  //     {
-  //       y: "40%",
-  //       ease: "none",
-
-  //       scrollTrigger: {
-  //         trigger: ".problem-section",
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: true,
-  //       },
-  //     },
-  //   );
-
-  //   gsap.fromTo(
-  //     ".beranda-text-con ",
-  //     {
-  //       y: 0,
-  //     },
-  //     {
-  //       y: "40%",
-  //       ease: "none",
-
-  //       scrollTrigger: {
-  //         trigger: ".problem-section",
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: true,
-  //       },
-  //     },
-  //   );
-  // }, []);
-
   return (
     <div className="landing-page">
       <Navbar />
 
       {/* landing page */}
-      {/* <Beranda /> */}
       <Hero />
       {/* <Problem />
       <Problem2 />
