@@ -9,6 +9,7 @@ import BottomNav from "./components/BottomNav/BottomNav";
 import SiderNav from "./components/SiderNav/SiderNav";
 import FormInputData from "./components/FormInputData/FormInputData";
 import DashboardContent from "./components/DashboardContent/DashboardContent";
+import Info from "./components/Info/Info";
 
 import { Layout, Button } from "antd";
 
@@ -32,7 +33,7 @@ function Dashboard() {
           </div>
         ) : currentMenu === "tantangan" ? (
           <div>
-            <p>halaman tantangan</p>
+            <Info />
           </div>
         ) : currentMenu === "riwayat" ? (
           <div>

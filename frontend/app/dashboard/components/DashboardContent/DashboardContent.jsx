@@ -11,7 +11,6 @@ import { IoMdPeople } from "react-icons/io";
 // components
 import PresentaseBoros from "../PresentaseBoros/PresentaseBoros";
 import FollowUpAi from "../FollowUpAi/FollowUpAi";
-import Info from "../Info/Info";
 
 const userDataListrik = [
   {
@@ -50,7 +49,6 @@ function DashboardContent() {
         </p>
         <p>Berikut adalah hasil analisis penggunaan energi rumah anda</p>
       </div>
-
       <div className="div-1-con data-listrik-user">
         {userDataListrik.map((data, index) => (
           <div key={index} className="data-con">
@@ -63,12 +61,11 @@ function DashboardContent() {
           </div>
         ))}
       </div>
-
       <div className="div-2-con">
         <PresentaseBoros />
         <FollowUpAi />
       </div>
-      <Info />
+      s
     </div>
   );
 }
