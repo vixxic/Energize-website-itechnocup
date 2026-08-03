@@ -8,6 +8,9 @@ export function DashboardProvider({ children }) {
   const [currentMenu, setCurrentMenu] = useState("dashboard");
 
   const [devicesData, setDevicesData] = useState([]);
+  const [analysis, setAnalysis] = useState(null);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [analysisError, setAnalysisError] = useState("");
   const [profilInfo, setProfilInfo] = useState({
     penghuni: 1,
     dayaListrikRumah: "",
@@ -21,6 +24,12 @@ export function DashboardProvider({ children }) {
         setCurrentMenu,
         devicesData,
         setDevicesData,
+        analysis,
+        setAnalysis,
+        analysisLoading,
+        setAnalysisLoading,
+        analysisError,
+        setAnalysisError,
         profilInfo,
         setProfilInfo,
       }}
