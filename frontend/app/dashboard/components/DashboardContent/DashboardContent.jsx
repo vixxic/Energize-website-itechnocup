@@ -11,6 +11,7 @@ import { IoMdPeople } from "react-icons/io";
 // components
 import PresentaseBoros from "../PresentaseBoros/PresentaseBoros";
 import FollowUpAi from "../FollowUpAi/FollowUpAi";
+import Info from "../Info/Info";
 
 const userDataListrik = [
   {
@@ -66,6 +67,7 @@ function DashboardContent() {
       <div className="div-2-con">
         <PresentaseBoros />
         <FollowUpAi />
+        <Info />
       </div>
     </div>
   );
