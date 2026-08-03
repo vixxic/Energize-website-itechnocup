@@ -67,8 +67,8 @@ function DashboardContent() {
       <div className="div-2-con">
         <PresentaseBoros />
         <FollowUpAi />
-        <Info />
       </div>
+      <Info />
     </div>
   );
 }
