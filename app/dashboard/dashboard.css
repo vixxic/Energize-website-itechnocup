@@ -6,13 +6,10 @@
 .bottom-nav-dashboard {
   display: none;
   height: 70px;
+  padding: 0 7vw !important;
 }
 
 .sider-dashboard-con {
-  position: fixed;
-  top: 0;
-  left: 0;
-
   width: 20%;
   min-height: 100vh;
 
@@ -24,6 +21,8 @@
   background-color: var(--pallet-gading);
   padding: 2vw;
   min-height: 100vh;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -38,8 +37,6 @@
 
   .bottom-nav-dashboard {
     display: flex;
-
-    position: fixed;
     bottom: 0;
     left: 0;
 

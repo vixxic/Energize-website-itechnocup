@@ -38,7 +38,7 @@ function Problem() {
 
   return (
     <div className="problem-section padding">
-      <img className="awan-parallax" src="/problems-img/awan.png" />
+      {/* <img className="awan-parallax" src="/problems-img/awan.png" /> */}
 
       <h2>Dampak Tersembunyi Penggunaan Energi</h2>
       <p className="problem-text">

@@ -1,0 +1,37 @@
+.home-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+}
+
+.absolute-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  background: linear-gradient(180deg, #7269e0, #d0c9f3);
+}
+
+.absolute-div img {
+  position: absolute;
+}
+
+.layer1 {
+  z-index: 10;
+  width: 100%;
+  bottom: -360;
+}
+
+.layer2 {
+  z-index: 9;
+  width: 45%;
+  right: 0;
+  bottom: 0;
+}
+
+.layer3 {
+  z-index: 8;
+  bottom: 0;
+  right: 120;
+}

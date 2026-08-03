@@ -19,7 +19,7 @@ function Dashboard() {
 
   return (
     <Layout>
-      <Sider className="sider-dashboard-con" width="20%">
+      <Sider className="sider-dashboard-con" width={280}>
         <SiderNav />
       </Sider>
 
