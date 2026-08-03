@@ -26,9 +26,7 @@ function Navbar() {
     <div className={`navbar-outer padding `}>
       <div className={`navbar-inner ${scrolled ? "scrolled" : ""}`}>
         <div className="logo-container">
-          <div className="nav-logo">
-            <img className="logo" src="/logo-energize.png" />
-          </div>
+          <div className="nav-logo"></div>
           <p>ENERGIZE</p>
         </div>
 

@@ -84,14 +84,14 @@ export default function Home() {
       {/* landing page */}
       {/* <Beranda /> */}
       <Hero />
-      <Problem />
+      {/* <Problem />
       <Problem2 />
       <Problem3 />
       <Fitur />
       <HowItWorks />
-      <Impact />
+      <Impact /> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

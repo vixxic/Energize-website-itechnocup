@@ -20,7 +20,7 @@
 .layer1 {
   z-index: 10;
   width: 100%;
-  bottom: -360;
+  bottom: -450;
 }
 
 .layer2 {
@@ -34,4 +34,46 @@
   z-index: 8;
   bottom: 0;
   right: 120;
+}
+
+.hero-text-con {
+  position: absolute;
+  width: 40%;
+
+  top: 30%;
+  left: 10%;
+}
+
+.hero-text-con p:first-child {
+  font-size: var(--text-header);
+  padding-right: 2vw;
+  color: #070f39;
+  font-weight: 500;
+
+  margin-bottom: 0.5vw;
+}
+
+.hero-text-con p {
+  font-size: var(--text-paragraf);
+  color: #070f39;
+  margin: 0%;
+}
+
+.analyze-btn-hero {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  background-color: var(--pallet-nila);
+  color: white;
+
+  border: none;
+  padding: 0.5vw 1.5vw;
+  border-radius: var(--radius);
+
+  transition: background-color 2s ease;
+  transition: font-weight 2s ease;
+  font-weight: 600;
+
+  margin: 3vw 0;
 }

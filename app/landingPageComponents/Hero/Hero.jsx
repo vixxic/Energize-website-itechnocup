@@ -33,7 +33,7 @@ function Hero() {
       },
     });
     gsap.to(".layer2", {
-      y: -120,
+      y: 120,
       ease: "none",
       scrollTrigger: {
         trigger: ".home-section",
@@ -44,7 +44,7 @@ function Hero() {
       },
     });
     gsap.to(".layer3", {
-      y: -250,
+      y: 250,
       ease: "none",
       scrollTrigger: {
         trigger: ".home-section",
@@ -59,6 +59,14 @@ function Hero() {
   return (
     <div className="home-section">
       <div className="absolute-div">
+        <div className="hero-text-con">
+          <p>Pahami Energi Anda</p>
+          <p>
+            Kenali pola penggunaan listrik, temukan peluang penghematan, dan
+            bangun kebiasaan energi yang lebih bijak.
+          </p>
+          <button className="analyze-btn-hero">Analisis Sekarang</button>
+        </div>
         <img className="layer1" src="/parallax-effect/layer-1-parallax.png" />
         <img className="layer2" src="/parallax-effect/layer-2-parallax.png" />
         <img className="layer3" src="/parallax-effect/layer-3-parallax.png" />

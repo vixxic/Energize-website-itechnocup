@@ -39,22 +39,11 @@
   border-radius: 50px;
 }
 
-.logo-container {
-  display: flex;
-  display: flex;
-  align-items: center;
-
-  gap: 1vw;
-  box-sizing: border-box;
-  width: 30%;
-}
-
 .logo-container p {
   margin: 0;
 
-  font-family: var(--font-averia);
   font-size: var(--text-paragraf);
-  color: var(--pallet-cream);
+  color: #202050;
 }
 
 .nav-logo {
@@ -68,7 +57,8 @@
 
 .nav-links li {
   display: flex;
-  color: var(--pallet-cream);
+  color: #202050;
+  font-weight: 400;
 }
 
 .analyze-btn button {
@@ -76,8 +66,8 @@
   justify-content: end;
   align-items: center;
 
-  background-color: var(--pallet-purple);
-  color: var(--pallet-cream);
+  background-color: var(--pallet-nila);
+  color: white;
 
   border: none;
   padding: 0.5vw 1.5vw;
