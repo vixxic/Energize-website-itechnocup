@@ -148,20 +148,12 @@
   margin-top:8px;
 }
 
-
-
-/* GRID */
-
 .challengeGrid{
   margin-top:14px;
   display:grid;
   grid-template-columns:1.2fr 1fr .85fr;
   gap:14px;
 }
-
-
-
-/* CARD UMUM */
 
 .activeCard,
 .aiCard,
