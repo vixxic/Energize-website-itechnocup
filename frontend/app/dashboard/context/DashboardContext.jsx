@@ -5,10 +5,10 @@ import { createContext, useContext, useState } from "react";
 export const DashboardContext = createContext();
 
 export function DashboardProvider({ children }) {
-  const [currentMenu, setCurrentMenu] = useState("dashboard");
-
-  const [devicesData, setDevicesData] = useState([]);
   const [analysis, setAnalysis] = useState(null);
+
+  const [currentMenu, setCurrentMenu] = useState("dashboard");
+  const [devicesData, setDevicesData] = useState([]);
   const [analysisLoading, setAnalysisLoading] = useState(false);
   const [analysisError, setAnalysisError] = useState("");
   const [profilInfo, setProfilInfo] = useState({
@@ -16,6 +16,14 @@ export function DashboardProvider({ children }) {
     dayaListrikRumah: "",
     biayaListikBulanan: "",
   });
+
+  const response = await fetch("/api/analyze", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ profilInfo, devicesData }),
+  });
+  const data = await response.json();
+  setAnalysis(data);
 
   return (
     <DashboardContext.Provider

@@ -28,7 +28,7 @@ export async function POST(request) {
     const apiKey = getApiKey();
     if (!apiKey) {
       return NextResponse.json(
-        { error: "tidak ada API_KEY di backend/.env" },
+        { error: "no api key" },
         { status: 500 },
       );
     }
@@ -43,9 +43,7 @@ ${devicesData
   .join("\n")}
 `.trim();
 
-    const response = await fetch(
-      ``,
-      {
+    const response = await fetch(``, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -62,13 +60,12 @@ ${devicesData
 
     if (!response.ok) {
       return NextResponse.json(
-        { error: data?.error?.message ?? "the gemini api error" },
+        { error: data?.error?.message ?? "the api error" },
         { status: response.status },
       );
     }
 
-    const text =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
 
     const jsonMatch = text.match(/```json\s*([\s\S]*?)\s*```/) || text.match(/\{[\s\S]*\}/);
     const parsed = jsonMatch ? JSON.parse(jsonMatch[1] ?? jsonMatch[0]) : { summary: text };
@@ -76,7 +73,7 @@ ${devicesData
     return NextResponse.json(parsed);
   } catch (error) {
     return NextResponse.json(
-      { error: error.message || "salah servernya" },
+      { error: error.message || "server error" },
       { status: 500 },
     );
   }
