@@ -19,6 +19,10 @@
   transition: background-color 2s ease;
 }
 
+.navbar-outer.scrolled {
+  background-color: #031139;
+}
+
 .navbar-inner {
   width: 100%;
   display: flex;
@@ -27,8 +31,8 @@
   padding: 0.2vw 1.5vw;
 }
 
-.navbar-outer.scrolled {
-  background-color: #031139;
+.nav-links li.scrolled {
+  color: aliceblue;
 }
 
 .logo-container {
@@ -80,16 +84,16 @@
   padding: 0.5vw 1.5vw;
   border-radius: var(--radius);
 
-  transition: background-color 1s ease;
-  transition: color ease 1s;
+  transition: background-color 2s ease;
+  transition: font-weight 2s ease;
   font-weight: 600;
 
   text-decoration: none;
 }
 
 .analyze-btn button.scrolled {
-  background-color: #8787d2;
-  color: #031139;
+  background-color: aliceblue;
+  color: var(--pallet-dark-blue);
   font-weight: 600;
 
   text-decoration: none;
