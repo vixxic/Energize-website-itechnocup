@@ -19,6 +19,8 @@
 
 .content-dashboard {
   background-color: var(--pallet-gading);
+  /* background-color: #c5bef0; */
+
   padding: 2vw;
   min-height: 100vh;
   box-sizing: border-box;

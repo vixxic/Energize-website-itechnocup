@@ -31,10 +31,10 @@ function Navbar() {
         </div>
 
         <ul className="nav-links">
-          <li>Beranda</li>
-          <li>Fitur</li>
-          <li>Cara Kerja</li>
-          <li>Dampak</li>
+          <li className={`${scrolled ? "scrolled" : ""}`}>Beranda</li>
+          <li className={`${scrolled ? "scrolled" : ""}`}>Fitur</li>
+          <li className={`${scrolled ? "scrolled" : ""}`}>Cara Kerja</li>
+          <li className={`${scrolled ? "scrolled" : ""}`}>Dampak</li>
         </ul>
 
         <div className="nav-hp">

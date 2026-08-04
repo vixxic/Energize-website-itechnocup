@@ -26,8 +26,8 @@ export default function Home() {
 
       {/* landing page */}
       <Hero />
-      {/* <Problem />
-      <Problem2 />
+      <Problem />
+      {/* <Problem2 />
       <Problem3 />
       <Fitur />
       <HowItWorks />

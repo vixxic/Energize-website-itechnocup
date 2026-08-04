@@ -1,3 +1,5 @@
+"use client";
+
 import "./Hero.css";
 import { useEffect } from "react";
 
@@ -8,6 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Hero() {
   useEffect(() => {
+    const triggers = [];
+
     gsap.to(".layer1", {
       y: -50,
       ease: "none",
@@ -15,7 +19,6 @@ function Hero() {
         trigger: ".home-section",
         start: "10% top",
         end: "bottom top",
-        markers: true,
         scrub: true,
       },
     });
@@ -29,6 +32,17 @@ function Hero() {
         scrub: true,
       },
     });
+    gsap.to(".hero-text-con", {
+      y: 120,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".home-section",
+        start: "10% top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
     gsap.to(".layer3", {
       y: 250,
       ease: "none",
@@ -39,6 +53,10 @@ function Hero() {
         scrub: true,
       },
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -52,9 +70,21 @@ function Hero() {
           </p>
           <button className="analyze-btn-hero">Analisis Sekarang</button>
         </div>
-        <img className="layer1" src="/parallax-effect/layer-1-parallax.png" />
-        <img className="layer2" src="/parallax-effect/p.png" />
-        <img className="layer3" src="/parallax-effect/layer-3-parallax.png" />
+        <img
+          className="layer1"
+          src="/parallax-effect/layer-1-parallax.png"
+          alt="gunung"
+        />
+        <img
+          className="layer2"
+          src="/parallax-effect/layer-2-parallax.png"
+          alt="rumah"
+        />
+        <img
+          className="layer3"
+          src="/parallax-effect/layer-3-parallax.png"
+          alt="bukit"
+        />
       </div>
     </div>
   );

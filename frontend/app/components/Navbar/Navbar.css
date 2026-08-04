@@ -34,9 +34,11 @@
 }
 
 .navbar-inner.scrolled {
-  background-color: #202050;
+  background-color: #061239;
+}
 
-  border-radius: 50px;
+.nav-links li.scrolled {
+  color: aliceblue;
 }
 
 .logo-container p {
@@ -79,7 +81,7 @@
 }
 
 .analyze-btn button.scrolled {
-  background: var(--pallet-yellow);
+  background-color: aliceblue;
   color: var(--pallet-dark-blue);
   font-weight: 600;
 }
