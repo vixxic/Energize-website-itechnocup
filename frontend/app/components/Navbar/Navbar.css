@@ -33,6 +33,14 @@
   padding: 0.2vw 1.5vw;
 }
 
+.navbar-inner.scrolled {
+  background-color: #061239;
+}
+
+.nav-links li.scrolled {
+  color: aliceblue;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
