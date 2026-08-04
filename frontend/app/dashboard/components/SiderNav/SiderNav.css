@@ -12,19 +12,23 @@
 .logo-sider-dashboard {
   display: flex;
   align-items: center;
-  gap: 1vw;
+  gap: 12px;
+  padding: 20px 24px;
 }
 
 .logo-sider-dashboard img {
-  width: 10%;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 .logo-sider-dashboard p {
-  font-size: clamp(20px, 1.5vw, 30px);
-  font-family: var(--font-averia);
-  font-weight: 500;
-  color: aliceblue;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .sider-link-dashboard .ant-menu {

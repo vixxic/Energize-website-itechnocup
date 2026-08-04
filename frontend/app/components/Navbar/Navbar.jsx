@@ -25,10 +25,10 @@ function Navbar() {
   return (
     <div className={`navbar-outer padding `}>
       <div className={`navbar-inner ${scrolled ? "scrolled" : ""}`}>
-        <div className="logo-container">
-          <div className="nav-logo"></div>
-          <p>ENERGIZE</p>
-        </div>
+       <div className="logo-container">
+       <img src="/logo (1).png" alt="Logo" className="nav-logo" />
+       <p className="navbar-logo">Energize</p>
+       </div>
 
         <ul className="nav-links">
           <li className={`${scrolled ? "scrolled" : ""}`}>Beranda</li>
