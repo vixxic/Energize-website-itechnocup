@@ -33,6 +33,10 @@
   padding: 0.2vw 1.5vw;
 }
 
+.navbar-inner.scrolled {
+  background-color: #031139;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -61,6 +65,12 @@
   display: flex;
   color: #202050;
   font-weight: 400;
+
+  transition: color ease 1s;
+}
+
+.nav-links li.scrolled {
+  color: aliceblue;
 }
 
 .analyze-btn button {
@@ -75,14 +85,14 @@
   padding: 0.5vw 1.5vw;
   border-radius: var(--radius);
 
-  transition: background-color 2s ease;
-  transition: font-weight 2s ease;
+  transition: background-color 1s ease;
+  transition: color ease 1s;
   font-weight: 600;
 }
 
 .analyze-btn button.scrolled {
-  background-color: aliceblue;
-  color: var(--pallet-dark-blue);
+  background-color: #8787d2;
+  color: #031139;
   font-weight: 600;
 }
 
