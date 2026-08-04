@@ -32,7 +32,7 @@ export default function Home() {
       <Fitur />
       <HowItWorks />
       <Impact /> */}
-
+ 
       {/* <Footer /> */}
     </div>
   );
