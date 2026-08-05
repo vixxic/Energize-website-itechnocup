@@ -6,19 +6,13 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-brand">
           <div className="footer-logo">
-            <img
-              src="/logo-energize.png"
-              alt="Energize Logo"
-              width={42}
-              height={42}
-            />
+            <img src="/logo.png" alt="Energize Logo" width={42} height={42} />
             <h2>Energize</h2>
           </div>
 
           <p>
-            Pahami penggunaan energi Anda, temukan peluang
-            penghematan, dan bersama-sama membangun masa depan
-            yang lebih berkelanjutan.
+            Pahami penggunaan energi Anda, temukan peluang penghematan, dan
+            bersama-sama membangun masa depan yang lebih berkelanjutan.
           </p>
         </div>
 

@@ -30,10 +30,10 @@ export default function Home() {
       {/* <Problem2 />
       <Problem3 /> */}
       <Fitur />
-      {/* <HowItWorks />
-      <Impact /> */}
+      <HowItWorks />
+      {/* <Impact /> */}
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
