@@ -6,6 +6,7 @@ export const DashboardContext = createContext();
 
 export function DashboardProvider({ children }) {
   const [analysis, setAnalysis] = useState(null);
+  const [challenge, setChallenge] = useState(null);
 
   const [currentMenu, setCurrentMenu] = useState("dashboard");
   const [devicesData, setDevicesData] = useState([]);
