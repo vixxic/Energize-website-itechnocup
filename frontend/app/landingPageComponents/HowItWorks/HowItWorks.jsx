@@ -112,7 +112,7 @@ function HowItWorks() {
       </div>
 
       <div className="stop-contacts-div">
-        <img src="/stop-contact.png" alt="Stop contact" />
+        {/* <img src="/stop-contact.png" alt="Stop contact" /> */}
       </div>
     </section>
   );

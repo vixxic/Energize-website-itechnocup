@@ -24,6 +24,8 @@
   padding: 0.7vw;
   display: flex;
 
+  gap: 1vw;
+
   border: 1px solid #f4eadd;
   box-shadow: 0 8px 24px rgba(170, 140, 110, 0.08);
   border-radius: 10px;
@@ -38,6 +40,6 @@
 }
 
 .div-2-con {
-  display: flex;
+  display: grid;
   gap: 2vw;
 }

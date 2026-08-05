@@ -36,7 +36,7 @@
 
   transform: translateX(-50%);
 
-  background-color: var(--pallet-dark-blue);
+  background-color: #2f2174;
 
   border-radius: 80px;
 
@@ -54,7 +54,7 @@
   width: 220px;
   height: 220px;
 
-  background-color: var(--pallet-purple);
+  background-color: #2f2174;
 
   display: flex;
   justify-content: center;
