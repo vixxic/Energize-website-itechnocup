@@ -17,12 +17,12 @@ export function DashboardProvider({ children }) {
     biayaListikBulanan: "",
   });
 
-  const response = await fetch("/api/analyze", {
+  const response = fetch("/api/analyze", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ profilInfo, devicesData }),
   });
-  const data = await response.json();
+  const data = response.json();
   setAnalysis(data);
 
   return (
