@@ -13,8 +13,18 @@ import { MdDelete } from "react-icons/md";
 import { Select } from "antd";
 
 export default function FormInputData() {
-  const { devicesData, setDevicesData, profilInfo, setProfilInfo } =
-    useContext(DashboardContext);
+  const {
+    devicesData,
+    setDevicesData,
+    profilInfo,
+    setProfilInfo,
+    setAnalysis,
+    analysisLoading,
+    setAnalysisLoading,
+    analysisError,
+    setAnalysisError,
+    setCurrentMenu,
+  } = useContext(DashboardContext);
 
   const powerOptions = [
     { value: "450", label: "450 VA" },
@@ -143,6 +153,37 @@ export default function FormInputData() {
     const newobj = devicesData.filter((_, index) => index !== targetIndex);
 
     setDevicesData(newobj);
+  };
+
+  const handleStartAnalysis = async () => {
+    if (devicesData.length === 0) {
+      setAnalysisError("Tambahkan minimal satu perangkat dahulu.");
+      return;
+    }
+
+    setAnalysisLoading(true);
+    setAnalysisError("");
+
+    try {
+      const response = await fetch("/api/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ profilInfo, devicesData }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Error menganalisis data.");
+      }
+
+      setAnalysis(data);
+      setCurrentMenu("dashboard");
+    } catch (error) {
+      setAnalysisError(error.message || "Error saat menganalisis data.");
+    } finally {
+      setAnalysisLoading(false);
+    }
   };
 
   return (
@@ -386,10 +427,17 @@ export default function FormInputData() {
           </p>
         </div>
 
-        <button type="button" className="to-analisis-btn purple-btn">
-          Lanjutkan ke Analisis →
+        <button
+          type="button"
+          className="to-analisis-btn purple-btn"
+          onClick={handleStartAnalysis}
+          disabled={analysisLoading}
+        >
+          {analysisLoading ? "Menganalisis..." : "Lanjutkan ke Analisis →"}
         </button>
       </div>
+
+      {analysisError ? <p className="error" style={{ marginTop: 16 }}>{analysisError}</p> : null}
     </div>
   );
 }
