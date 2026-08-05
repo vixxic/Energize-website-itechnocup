@@ -1,29 +1,38 @@
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 .fitur-section {
   width: 100%;
-  padding: 60px;
   background: #f8f5f5;
 }
 
-.top-card {
+.fitur-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5vw;
+
+  width: 100%;
+  gap: 5px;
+}
+
+.main-fitur {
+  width: 40%;
+  height: 500px;
+  background-color: #2f2174;
+}
+
+.sub-fitur-con {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 35px 50px;
-  margin-bottom: 40px;
+  gap: 5px;
 }
 
-.card {
-  border-radius: 6px;
-}
-
-.small {
-  height: 90px;
-  background: #3b2c84;
+.sub-fitur {
+  width: 100%;
+  background-color: #2f2174;
 }
 
 .badge-con {
@@ -41,15 +50,15 @@
   height: 100%;
 }
 
-.fitur-section div:first-child {
+.fitur-text-con {
   margin-bottom: 4vw;
 }
 
-.fitur-section p {
+.fitur-text-con p {
   text-align: center;
 }
 
-.fitur-section p:first-child {
+.fitur-text-con p:first-child {
   font-size: var(--text-header);
   padding-right: 2vw;
   color: #2f2174;

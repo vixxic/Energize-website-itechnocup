@@ -2,8 +2,8 @@ import "./Fitur.css";
 
 export default function Fitur() {
   return (
-    <div className="fitur-section">
-      <div>
+    <div className="fitur-section padding">
+      <div className="fitur-text-con">
         <p>Kenali Pola Penggunaan Energi Anda</p>
         <p className="sub-title">
           Pahami bagaimana rumah Anda menggunakan energi. Kami mengubah data
@@ -11,11 +11,14 @@ export default function Fitur() {
         </p>
       </div>
 
-      <div className="top-card">
-        <div className="card small"></div>
-        <div className="card small"></div>
-        <div className="card small"></div>
-        <div className="card small"></div>
+      <div className="fitur-card">
+        <div className="main-fitur"></div>
+        <div className="sub-fitur-con">
+          <div className="sub-fitur card"></div>
+          <div className="sub-fitur card"></div>
+          <div className="sub-fitur card"></div>
+          <div className="sub-fitur card"></div>
+        </div>
       </div>
 
       <div className="badge-con">
