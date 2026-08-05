@@ -3,7 +3,7 @@
   height: max-content;
   border-radius: 24px;
   padding: 26px;
-  background: linear-gradient(180deg, #2b0e79 0%, #5e2eff 100%);
+  background: #33187e;
   color: white;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
@@ -100,7 +100,7 @@
   height: 54px;
   border: none;
   border-radius: 14px;
-  background: #6a3ef5;
+  background: #8e51ff;
   color: white;
   font-size: 17px;
   font-weight: 700;
