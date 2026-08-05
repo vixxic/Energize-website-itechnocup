@@ -5,9 +5,11 @@ import { DashboardContext } from "../../context/DashboardContext";
 import "./FollowUpAi.css";
 
 export default function FollowUpAi() {
-  const { analysis, setAnalysis } = useContext(DashboardContext);
+  const { analysis, setChallenge } = useContext(DashboardContext);
   const [selected, setSelected] = useState("");
   const [other, setOther] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const options = analysis?.followUpOptions || [
     "Untuk tidur",
@@ -19,8 +21,32 @@ export default function FollowUpAi() {
   const question = analysis?.followUpQuestion || `Mengapa ${topDevices} dipakai setiap hari?`;
   const summary = analysis?.summary;
 
-  async function HandleChallenge() {
-
+  async function HandleSubmit() {
+    const jawaban = selected === "Lainnya" ? other : selected;
+    if (!jawaban) {
+      setError("Silakan pilih jawaban atau tulis alasan dahulu");
+      return;
+    }
+    setError("");
+    setLoading(true);
+    try {
+      const response = await fetch("/api/challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({analysis, answer: jawaban}),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data?.error || "Error server");
+      }
+      setChallenge(data);
+      setSelected("");
+      setOther("");
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -30,15 +56,14 @@ export default function FollowUpAi() {
           ❄️
         </div>
         <div>
-          <h2>Perangkat Paling Boros: AC</h2>
+          <h2>Perangkat Paling Boros: {topDevices}</h2>
           <p>
-            AC adalah perangkat dengan konsumsi energi tertinggi
-            di rumah Anda.
+            {summary}
           </p>
         </div>
       </div>
       <div className="followBody">
-        <h3>Mengapa AC digunakan selama 8 jam/hari?</h3>
+        <h3>{question}</h3>
         <p className="subtitle">
           Pilih alasan yang paling sesuai atau tulis jawaban Anda sendiri.
         </p>
@@ -64,8 +89,8 @@ export default function FollowUpAi() {
 
       </div>
 
-      <button className="submitBtn">
-        Kirim Jawaban →
+      <button className="submitBtn" onClick={HandleSubmit} disabled={loading}>
+        {loading ? "Mengirim..." : "Kirim Jawaban →"}
       </button>
     </div>
   );
