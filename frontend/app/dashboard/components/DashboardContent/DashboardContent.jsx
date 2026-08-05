@@ -48,7 +48,7 @@ const userDataListrik = [
 ];
 
 function DashboardContent() {
-  const { analysis, challenge } = useContext(DashboardContext);
+  const { analysis, challenge, devicesData } = useContext(DashboardContext);
 
   const tantanganAi = challenge?.challenges || challengeData;
 
@@ -78,7 +78,7 @@ function DashboardContent() {
         ))}
       </div>
       <div className="div-2-con">
-        <PresentaseBoros analysis={analysis} />
+        <PresentaseBoros analysis={analysis} devicesData={devicesData} />
         <FollowUpAi />
       </div>
 

@@ -2,8 +2,10 @@ import React from "react";
 import "./PresentaseBoros.css";
 import { AirConditionerOutlined, DashboardOutlined } from "@ant-design/icons";
 
-function PresentaseBoros() {
-  const data = [
+const colors = ["#6A3EF5", "#FF9F1C", "#4CAF50"];
+
+function PresentaseBoros({ analysis, devicesData }) {
+  const defaultData = [
     {
       no: 1,
       nama: "AC",
@@ -35,6 +37,24 @@ function PresentaseBoros() {
       icon: "📺",
     },
   ];
+
+  const wasteful = analysis?.wastefulDevices || [];
+
+  const data = wasteful.length > 0 ? wasteful.slice(0, 3).map((nama, i) => {
+    const device = (devicesData || []).find(
+      (d) => d.deviceName?.toLowerCase() === nama?.toLowerCase(),);
+      const kwh = device ? ((device.devicePower || 0) * (device.quantity || 1) * (device.usageDuration || 0)) / 1000 : 0;
+      return {
+        no: i + 1,
+        nama,
+        waktu: device ? `${device.usageDuration} jam/hari` : "-",
+        watt: device ? `${device.devicePower || "?"} W` : "-",
+        konsumsi: device ? `${kwh.toFixed(2)} kWh/hari` : "-",
+        persen: Math.max(1, 33 - i * 10),
+        color: colors[i] || "#6A3EF5",
+        icon: "🔌",
+      };
+    }) : defaultData;
 
   return (
     <div className="borosCard">
