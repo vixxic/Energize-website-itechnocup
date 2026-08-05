@@ -85,13 +85,20 @@ function DashboardContent() {
 
       <hr />
 
-      <h4>Kami menyarankan 3 tantangan ini</h4>
+      <h4>
+        Tiga langkah sederhana menuju penggunaan energi yang lebih efisien
+      </h4>
+      <p>Pilih tantangan pertama anda</p>
+
+      <hr />
 
       <div className="div-3-con pilihan-tantangan">
         {tantanganAi.map((tantangan) => (
           <div key={tantangan.urutan}>
             <p>{tantangan.tantangan}</p>
             <p>{tantangan.des}</p>
+
+            <button>Terima tantangan</button>
           </div>
         ))}
       </div>
