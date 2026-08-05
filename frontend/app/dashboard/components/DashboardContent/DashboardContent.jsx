@@ -8,6 +8,13 @@ import { HiOutlineChartBar } from "react-icons/hi";
 import { TbPercentage25 } from "react-icons/tb";
 import { IoMdPeople } from "react-icons/io";
 
+// context
+import { useContext } from "react";
+import { DashboardContext } from "../../context/DashboardContext";
+
+// data
+import challengeData from "../../data/challengeData";
+
 // components
 import PresentaseBoros from "../PresentaseBoros/PresentaseBoros";
 import FollowUpAi from "../FollowUpAi/FollowUpAi";
@@ -40,24 +47,11 @@ const userDataListrik = [
   },
 ];
 
-const tantanganAi = [
-  {
-    urutan: 1,
-    tantangan: "dari ai #1",
-    des: "tantangan nya apa",
-  },
-  {
-    urutan: 2,
-    tantangan: "dari ai #2",
-    des: "tantangan nya apa",
-  },
-  {
-    urutan: 3,
-    tantangan: "dari ai #3",
-    des: "tantangan nya apa",
-  },
-];
 function DashboardContent() {
+  const { analysis, challenge } = useContext(DashboardContext);
+
+  const tantanganAi = challenge?.challenges || challengeData;
+
   return (
     <div>
       <div className="header-text-con-dashboard">
@@ -72,29 +66,38 @@ function DashboardContent() {
             <div style={{ backgroundColor: data.bgColor }}>{data.icon}</div>
             <div>
               <p>{data.title}</p>
-              <p></p>
-              <p></p>
+              <p>
+                {index === 0 && analysis?.totalKwhPerDay}
+                {index === 1 && challenge?.impactPrediction}
+                {index === 2 && analysis?.totalKwhPerDay}
+                {index === 3 && analysis?.totalKwhPerDay}
+                {index === 4 && "-"}
+              </p>
             </div>
           </div>
         ))}
       </div>
       <div className="div-2-con">
-        <PresentaseBoros />
+        <PresentaseBoros analysis={analysis} />
         <FollowUpAi />
       </div>
 
-      <hr />
+      {challenge && (
+        <>
+          <hr />
 
-      <h4>Kami menyarankan 3 tantangan ini</h4>
+          <h4>Kami menyarankan 3 tantangan ini</h4>
 
-      <div className="div-3-con pilihan-tantangan">
-        {tantanganAi.map((tantangan) => (
-          <div key={tantangan.urutan}>
-            <p>{tantangan.tantangan}</p>
-            <p>{tantangan.des}</p>
+          <div className="div-3-con pilihan-tantangan">
+            {tantanganAi.map((tantangan) => (
+              <div key={tantangan.urutan ?? tantangan.id}>
+                <p>{tantangan.tantangan || tantangan.title}</p>
+                <p>{tantangan.des || tantangan.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </div>
   );
 }

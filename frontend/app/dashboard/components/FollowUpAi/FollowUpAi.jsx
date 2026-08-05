@@ -11,7 +11,7 @@ export default function FollowUpAi() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const options = analysis?.followUpOptions || [
+  const options = analysis?.followUpChoices || [
     "Untuk tidur",
     "Untuk bekerja / belajar",
     "Lainnya",

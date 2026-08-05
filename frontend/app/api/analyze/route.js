@@ -34,7 +34,7 @@ export async function POST(request) {
     }
 
     const perangkat = devicesData.map((d, i) => {
-      const watts = d.estimatedPower ? `$("estimasi perangkat")` : `$(d.devicePower) W`;
+      const watts = d.estimatedPower ? "(estimasi perangkat)" : `${d.devicePower} W`;
       return `${i + 1}. ${d.deviceName} — jumlah: ${d.quantity}, daya: ${watts}, durasi: ${d.usageDuration} jam/hari`;
     }).join("\n");
 

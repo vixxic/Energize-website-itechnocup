@@ -50,14 +50,17 @@ HASIL ANALISIS SEBELUMNYA:
 - Jawaban pengguna: ${answer}
 
 TUGAS:
-1. Buat 3 tantangan hemat energi yang bisa diselesaikan (spesifik, terukur, ada durasi).
-2. Beri rekomendasi aksi konkret.
-3. Prediksi dampak jika tantangan dilakukan (perkiraan penghematan kWh & rupiah).
+1. Buat 3 tantangan hemat energi yang bisa dipilih pengguna (spesifik, terukur, ada durasi).
+2. Untuk tiap tantangan, buat 1 deskripsi singkat aksi yang harus dilakukan.
+3. Beri prediksi dampak jika tantangan dilakukan (perkiraan penghematan kWh & rupiah).
 
 Balas HANYA JSON (tanpa teks lain), format:
 {
-  "challenge": "Kurangi pemakaian AC dari 8 jam jadi 5 jam selama 7 hari",
-  "recommendations": ["rekomendasi 1", "rekomendasi 2", "rekomendasi 3"],
+  "challenges": [
+    { "id": 1, "urutan": 1, "tantangan": "tantangan 1", "des": "deskripsi/aksi tantangan 1" },
+    { "id": 2, "urutan": 2, "tantangan": "tantangan 2", "des": "deskripsi/aksi tantangan 2" },
+    { "id": 3, "urutan": 3, "tantangan": "tantangan 3", "des": "deskripsi/aksi tantangan 3" }
+  ],
   "impactPrediction": "Menghemat sekitar X kWh atau Rp Y per bulan"
 }
 `.trim();

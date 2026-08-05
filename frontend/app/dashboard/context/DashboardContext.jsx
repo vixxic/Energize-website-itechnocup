@@ -31,6 +31,8 @@ export function DashboardProvider({ children }) {
         setAnalysisLoading,
         analysisError,
         setAnalysisError,
+        challenge,
+        setChallenge,
         profilInfo,
         setProfilInfo,
       }}
