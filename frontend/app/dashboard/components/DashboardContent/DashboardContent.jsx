@@ -48,7 +48,8 @@ const userDataListrik = [
 ];
 
 function DashboardContent() {
-  const { analysis, challenge, devicesData } = useContext(DashboardContext);
+  const { analysis, challenge, devicesData, activeChallenges, acceptChallenge } =
+    useContext(DashboardContext);
 
   const tantanganAi = challenge?.challenges || challengeData;
 
@@ -92,14 +93,26 @@ function DashboardContent() {
           <p>Pilih tantangan pertama anda</p>
 
           <div className="div-3-con pilihan-tantangan">
-            {tantanganAi.map((tantangan) => (
-              <div key={tantangan.urutan ?? tantangan.id}>
-                <p>{tantangan.tantangan || tantangan.title}</p>
-                <p>{tantangan.des || tantangan.description}</p>
+            {tantanganAi.map((tantangan) => {
+              const diterima = activeChallenges.some(
+                (c) =>
+                  (c.tantangan || c.title) ===
+                  (tantangan.tantangan || tantangan.title),
+              );
+              return (
+                <div key={tantangan.urutan ?? tantangan.id}>
+                  <p>{tantangan.tantangan || tantangan.title}</p>
+                  <p>{tantangan.des || tantangan.description}</p>
 
-                <button>Terima tantangan</button>
-              </div>
-            ))}
+                  <button
+                    disabled={diterima}
+                    onClick={() => acceptChallenge(tantangan)}
+                  >
+                    {diterima ? "Sudah diterima ✓" : "Terima tantangan"}
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </>
       )}

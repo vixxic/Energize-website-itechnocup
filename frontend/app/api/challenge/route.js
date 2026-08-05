@@ -53,6 +53,7 @@ TUGAS:
 1. Buat 3 tantangan hemat energi yang bisa dipilih pengguna (spesifik, terukur, ada durasi).
 2. Untuk tiap tantangan, buat 1 deskripsi singkat aksi yang harus dilakukan.
 3. Beri prediksi dampak jika tantangan dilakukan (perkiraan penghematan kWh & rupiah).
+4. Beri 3-4 rekomendasi/tips hemat energi singkat yang spesifik untuk kondisi pengguna.
 
 Balas HANYA JSON (tanpa teks lain), format:
 {
@@ -61,6 +62,7 @@ Balas HANYA JSON (tanpa teks lain), format:
     { "id": 2, "urutan": 2, "tantangan": "tantangan 2", "des": "deskripsi/aksi tantangan 2" },
     { "id": 3, "urutan": 3, "tantangan": "tantangan 3", "des": "deskripsi/aksi tantangan 3" }
   ],
+  "recommendations": ["rekomendasi 1", "rekomendasi 2", "rekomendasi 3", "rekomendasi 4"],
   "impactPrediction": "Menghemat sekitar X kWh atau Rp Y per bulan"
 }
 `.trim();

@@ -10,7 +10,7 @@ import { LuClock3 } from "react-icons/lu";
 import { FiChevronDown, FiMinus, FiPlus } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 
-import { Select } from "antd";
+import { Select, App } from "antd";
 
 export default function FormInputData() {
   const {
@@ -23,8 +23,11 @@ export default function FormInputData() {
     setAnalysisLoading,
     analysisError,
     setAnalysisError,
+    runAnalysis,
     setCurrentMenu,
   } = useContext(DashboardContext);
+
+  const { message } = App.useApp();
 
   const powerOptions = [
     { value: "450", label: "450 VA" },
@@ -155,35 +158,9 @@ export default function FormInputData() {
     setDevicesData(newobj);
   };
 
-  const handleStartAnalysis = async () => {
-    if (devicesData.length === 0) {
-      setAnalysisError("Tambahkan minimal satu perangkat dahulu.");
-      return;
-    }
-
-    setAnalysisLoading(true);
-    setAnalysisError("");
-
-    try {
-      const response = await fetch("/api/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ profilInfo, devicesData }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Error menganalisis data.");
-      }
-
-      setAnalysis(data);
-      setCurrentMenu("dashboard");
-    } catch (error) {
-      setAnalysisError(error.message || "Error saat menganalisis data.");
-    } finally {
-      setAnalysisLoading(false);
-    }
+  const handleStartAnalysis = () => {
+    message.warning("Jangan tutup halaman atau refresh halaman selama analisis berlangsung!");
+    runAnalysis();
   };
 
   return (
