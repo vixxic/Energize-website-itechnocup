@@ -40,6 +40,23 @@ const userDataListrik = [
   },
 ];
 
+const tantanganAi = [
+  {
+    urutan: 1,
+    tantangan: "dari ai #1",
+    des: "tantangan nya apa",
+  },
+  {
+    urutan: 2,
+    tantangan: "dari ai #2",
+    des: "tantangan nya apa",
+  },
+  {
+    urutan: 3,
+    tantangan: "dari ai #3",
+    des: "tantangan nya apa",
+  },
+];
 function DashboardContent() {
   return (
     <div>
@@ -65,7 +82,19 @@ function DashboardContent() {
         <PresentaseBoros />
         <FollowUpAi />
       </div>
-      s
+
+      <hr />
+
+      <h4>Kami menyarankan 3 tantangan ini</h4>
+
+      <div className="div-3-con pilihan-tantangan">
+        {tantanganAi.map((tantangan) => (
+          <div key={tantangan.urutan}>
+            <p>{tantangan.tantangan}</p>
+            <p>{tantangan.des}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

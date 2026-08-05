@@ -21,6 +21,10 @@ export default function Fitur() {
         </div>
       </div>
 
+      <p className="badge-text">
+        Selesaikan Tantangan dan Dapatkan Penghargaan Anda!!
+      </p>
+
       <div className="badge-con">
         <img src="/badge-img/badge-efisien.png" />
         <img src="/badge-img/badge-tantangan-pertama.png" />

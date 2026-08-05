@@ -40,6 +40,12 @@
 }
 
 .div-2-con {
-  display: grid;
+  display: flex;
   gap: 2vw;
+}
+
+.div-3-con {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
