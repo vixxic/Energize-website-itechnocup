@@ -7,7 +7,8 @@
   justify-content: center;
   align-items: center;
 
-  padding: 4rem;
+  gap: 4vw;
+  padding-bottom: 6rem;
 }
 
 .problem-section p {
@@ -17,6 +18,7 @@
   font-weight: 500;
 
   margin-bottom: 0.5vw;
+  margin-top: 2vw;
 }
 
 .problems-con {

@@ -36,6 +36,8 @@ gsap.registerPlugin(ScrollTrigger);
 function Problem() {
   return (
     <div className="problem-section padding">
+      <p>Dampak Pemborosan Energi</p>
+
       <div className="problems-con">
         <div className="problem-box box1">
           <img src="/problems-img/3.png" />
@@ -59,8 +61,6 @@ function Problem() {
           </div>
         </div>
       </div>
-
-      <p>Dampak Tersembunyi Penggunaan Energi</p>
     </div>
   );
 }

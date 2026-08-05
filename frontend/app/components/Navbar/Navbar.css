@@ -11,6 +11,8 @@
   width: 100vw;
   height: 70px;
 
+  padding: 0 8vw;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
