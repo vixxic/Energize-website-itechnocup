@@ -21,7 +21,7 @@ function SiderNav() {
   return (
     <div className="sider-link-dashboard">
       <div className="logo-sider-dashboard">
-        <img src="/logo (1).png" />
+        <img src="/logo.png" />
         <p>Energize</p>
       </div>
 
