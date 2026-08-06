@@ -10,6 +10,7 @@ import SiderNav from "./components/SiderNav/SiderNav";
 import FormInputData from "./components/FormInputData/FormInputData";
 import DashboardContent from "./components/DashboardContent/DashboardContent";
 import Info from "./components/Info/Info";
+import Profile from "./components/Profile/Profile";
 
 import { Layout, Button } from "antd";
 
@@ -41,7 +42,7 @@ function Dashboard() {
           </div>
         ) : currentMenu === "profil" ? (
           <div>
-            <p>halaman profil</p>
+            <Profile />
           </div>
         ) : (
           "404 Halaman Tidak di Temukan"
