@@ -21,7 +21,7 @@ function CTA() {
         boxShadow: "0 0 10px #6c63ff, 0 0 20px #6c63ff, 0 0 40px #6c63ff",
         scrollTrigger: {
           trigger: buttonRef.current,
-          markers: true,
+
           start: "top 80%",
           end: "top 50%",
           toggleActions: "play none none reverse",

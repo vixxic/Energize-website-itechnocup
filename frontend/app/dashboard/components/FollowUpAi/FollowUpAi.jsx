@@ -2,10 +2,12 @@
 
 import { useState, useContext } from "react";
 import { DashboardContext } from "../../context/DashboardContext";
+import { App } from "antd";
 import "./FollowUpAi.css";
 
 export default function FollowUpAi() {
   const { analysis, setChallenge } = useContext(DashboardContext);
+  const { message } = App.useApp();
   const [selected, setSelected] = useState("");
   const [other, setOther] = useState("");
   const [loading, setLoading] = useState(false);
@@ -29,6 +31,7 @@ export default function FollowUpAi() {
     }
     setError("");
     setLoading(true);
+    message.warning("Jangan tutup halaman atau refresh halaman selama proses berlangsung!");
     try {
       const response = await fetch("/api/challenge", {
         method: "POST",
