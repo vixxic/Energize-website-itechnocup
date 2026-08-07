@@ -20,6 +20,8 @@
     "react-icons": "^5.7.0"
   },
   "devDependencies": {
+    "@types/node": "26.1.2",
+    "@types/react": "19.2.18",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.12"

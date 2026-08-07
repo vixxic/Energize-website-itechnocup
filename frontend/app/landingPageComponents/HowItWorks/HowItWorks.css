@@ -1,9 +1,9 @@
 .how-it-works-section {
   position: relative;
 
-  background-color: var(--pallet-cream);
+  background-color: #f8f5f5;
 
-  height: 200vh;
+  height: 155vh;
   min-height: 100vh;
 
   overflow: hidden;
@@ -29,9 +29,9 @@
   position: absolute;
 
   width: 20px;
-  height: 900px;
+  height: 100%;
 
-  top: 18%;
+  top: 20%;
   left: 50%;
 
   transform: translateX(-50%);

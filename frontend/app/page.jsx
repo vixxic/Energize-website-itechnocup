@@ -17,6 +17,7 @@ import Problem2 from "./landingPageComponents/Problem2/Problem2";
 import Problem3 from "./landingPageComponents/Problem3/Problem3";
 import Fitur from "./landingPageComponents/Fitur/Fitur";
 import HowItWorks from "./landingPageComponents/HowItWorks/HowItWorks";
+import CTA from "./landingPageComponents/CTA/CTA";
 import Impact from "./landingPageComponents/Impact/Impact";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       <Problem3 /> */}
       <Fitur />
       <HowItWorks />
+      <CTA />
       {/* <Impact /> */}
 
       <Footer />
