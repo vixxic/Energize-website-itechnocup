@@ -2,7 +2,6 @@ import { Mitr, Averia_Gruesa_Libre } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { App } from "antd";
 
 const mitr = Mitr({
   variable: "--font-mitr",
@@ -32,9 +31,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <SmoothScroll />
-        <AntdRegistry>
-          <App>{children}</App>
-        </AntdRegistry>
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );
